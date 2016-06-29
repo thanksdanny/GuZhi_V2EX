@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  GZTopicListCell.h
 //  GuZhi_V2EX
 //
 //  Created by Danny Ho on 6/30/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface GZTopicListCell : UITableViewCell
 
 @end
-

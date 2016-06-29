@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		FD90723C1D242E42003CAD5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD90723B1D242E42003CAD5A /* main.m */; };
 		FD90723F1D242E42003CAD5A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD90723E1D242E42003CAD5A /* AppDelegate.m */; };
-		FD9072421D242E42003CAD5A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9072411D242E42003CAD5A /* ViewController.m */; };
 		FD9072451D242E42003CAD5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD9072431D242E42003CAD5A /* Main.storyboard */; };
 		FD9072471D242E42003CAD5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD9072461D242E42003CAD5A /* Assets.xcassets */; };
 		FD90724A1D242E42003CAD5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD9072481D242E42003CAD5A /* LaunchScreen.storyboard */; };
 		FD9072551D242E43003CAD5A /* GuZhi_V2EXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9072541D242E43003CAD5A /* GuZhi_V2EXTests.m */; };
 		FD9072601D242E43003CAD5A /* GuZhi_V2EXUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD90725F1D242E43003CAD5A /* GuZhi_V2EXUITests.m */; };
+		FD9072751D243463003CAD5A /* GZRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9072741D243463003CAD5A /* GZRootViewController.m */; };
+		FD9072781D243533003CAD5A /* GZTopicListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9072771D243533003CAD5A /* GZTopicListCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +40,6 @@
 		FD90723B1D242E42003CAD5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FD90723D1D242E42003CAD5A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FD90723E1D242E42003CAD5A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FD9072401D242E42003CAD5A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FD9072411D242E42003CAD5A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FD9072441D242E42003CAD5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FD9072461D242E42003CAD5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD9072491D242E42003CAD5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +50,10 @@
 		FD90725B1D242E43003CAD5A /* GuZhi_V2EXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuZhi_V2EXUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD90725F1D242E43003CAD5A /* GuZhi_V2EXUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuZhi_V2EXUITests.m; sourceTree = "<group>"; };
 		FD9072611D242E43003CAD5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD9072731D243463003CAD5A /* GZRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZRootViewController.h; path = Controllers/GZRootViewController.h; sourceTree = "<group>"; };
+		FD9072741D243463003CAD5A /* GZRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZRootViewController.m; path = Controllers/GZRootViewController.m; sourceTree = "<group>"; };
+		FD9072761D243533003CAD5A /* GZTopicListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZTopicListCell.h; path = Views/GZTopicListCell.h; sourceTree = "<group>"; };
+		FD9072771D243533003CAD5A /* GZTopicListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZTopicListCell.m; path = Views/GZTopicListCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +104,11 @@
 		FD9072391D242E42003CAD5A /* GuZhi_V2EX */ = {
 			isa = PBXGroup;
 			children = (
-				FD90723D1D242E42003CAD5A /* AppDelegate.h */,
-				FD90723E1D242E42003CAD5A /* AppDelegate.m */,
-				FD9072401D242E42003CAD5A /* ViewController.h */,
-				FD9072411D242E42003CAD5A /* ViewController.m */,
+				FD90726F1D243359003CAD5A /* Controllers */,
+				FD90726E1D24333F003CAD5A /* Models */,
+				FD90726D1D243330003CAD5A /* Views */,
 				FD9072431D242E42003CAD5A /* Main.storyboard */,
 				FD9072461D242E42003CAD5A /* Assets.xcassets */,
-				FD9072481D242E42003CAD5A /* LaunchScreen.storyboard */,
-				FD90724B1D242E42003CAD5A /* Info.plist */,
 				FD90723A1D242E42003CAD5A /* Supporting Files */,
 			);
 			path = GuZhi_V2EX;
@@ -117,6 +117,10 @@
 		FD90723A1D242E42003CAD5A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FD9072481D242E42003CAD5A /* LaunchScreen.storyboard */,
+				FD90724B1D242E42003CAD5A /* Info.plist */,
+				FD90723D1D242E42003CAD5A /* AppDelegate.h */,
+				FD90723E1D242E42003CAD5A /* AppDelegate.m */,
 				FD90723B1D242E42003CAD5A /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +142,31 @@
 				FD9072611D242E43003CAD5A /* Info.plist */,
 			);
 			path = GuZhi_V2EXUITests;
+			sourceTree = "<group>";
+		};
+		FD90726D1D243330003CAD5A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FD9072761D243533003CAD5A /* GZTopicListCell.h */,
+				FD9072771D243533003CAD5A /* GZTopicListCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FD90726E1D24333F003CAD5A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		FD90726F1D243359003CAD5A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FD9072731D243463003CAD5A /* GZRootViewController.h */,
+				FD9072741D243463003CAD5A /* GZRootViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,8 +302,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD9072421D242E42003CAD5A /* ViewController.m in Sources */,
+				FD9072781D243533003CAD5A /* GZTopicListCell.m in Sources */,
 				FD90723F1D242E42003CAD5A /* AppDelegate.m in Sources */,
+				FD9072751D243463003CAD5A /* GZRootViewController.m in Sources */,
 				FD90723C1D242E42003CAD5A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +444,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = GuZhi_V2EX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thanksdanny.GuZhi-V2EX";
@@ -425,6 +456,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = GuZhi_V2EX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thanksdanny.GuZhi-V2EX";
