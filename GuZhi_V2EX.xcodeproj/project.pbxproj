@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FD90723C1D242E42003CAD5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD90723B1D242E42003CAD5A /* main.m */; };
+		FD90723F1D242E42003CAD5A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD90723E1D242E42003CAD5A /* AppDelegate.m */; };
+		FD9072421D242E42003CAD5A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9072411D242E42003CAD5A /* ViewController.m */; };
+		FD9072451D242E42003CAD5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD9072431D242E42003CAD5A /* Main.storyboard */; };
+		FD9072471D242E42003CAD5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD9072461D242E42003CAD5A /* Assets.xcassets */; };
+		FD90724A1D242E42003CAD5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD9072481D242E42003CAD5A /* LaunchScreen.storyboard */; };
+		FD9072551D242E43003CAD5A /* GuZhi_V2EXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9072541D242E43003CAD5A /* GuZhi_V2EXTests.m */; };
+		FD9072601D242E43003CAD5A /* GuZhi_V2EXUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD90725F1D242E43003CAD5A /* GuZhi_V2EXUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FD9072511D242E43003CAD5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD90722F1D242E42003CAD5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD9072361D242E42003CAD5A;
+			remoteInfo = GuZhi_V2EX;
+		};
+		FD90725C1D242E43003CAD5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD90722F1D242E42003CAD5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD9072361D242E42003CAD5A;
+			remoteInfo = GuZhi_V2EX;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FD9072371D242E42003CAD5A /* GuZhi_V2EX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuZhi_V2EX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD90723B1D242E42003CAD5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FD90723D1D242E42003CAD5A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FD90723E1D242E42003CAD5A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FD9072401D242E42003CAD5A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FD9072411D242E42003CAD5A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FD9072441D242E42003CAD5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FD9072461D242E42003CAD5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FD9072491D242E42003CAD5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FD90724B1D242E42003CAD5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD9072501D242E43003CAD5A /* GuZhi_V2EXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuZhi_V2EXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD9072541D242E43003CAD5A /* GuZhi_V2EXTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuZhi_V2EXTests.m; sourceTree = "<group>"; };
+		FD9072561D242E43003CAD5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD90725B1D242E43003CAD5A /* GuZhi_V2EXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuZhi_V2EXUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD90725F1D242E43003CAD5A /* GuZhi_V2EXUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuZhi_V2EXUITests.m; sourceTree = "<group>"; };
+		FD9072611D242E43003CAD5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FD9072341D242E42003CAD5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD90724D1D242E43003CAD5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD9072581D242E43003CAD5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FD90722E1D242E42003CAD5A = {
+			isa = PBXGroup;
+			children = (
+				FD9072391D242E42003CAD5A /* GuZhi_V2EX */,
+				FD9072531D242E43003CAD5A /* GuZhi_V2EXTests */,
+				FD90725E1D242E43003CAD5A /* GuZhi_V2EXUITests */,
+				FD9072381D242E42003CAD5A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FD9072381D242E42003CAD5A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD9072371D242E42003CAD5A /* GuZhi_V2EX.app */,
+				FD9072501D242E43003CAD5A /* GuZhi_V2EXTests.xctest */,
+				FD90725B1D242E43003CAD5A /* GuZhi_V2EXUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FD9072391D242E42003CAD5A /* GuZhi_V2EX */ = {
+			isa = PBXGroup;
+			children = (
+				FD90723D1D242E42003CAD5A /* AppDelegate.h */,
+				FD90723E1D242E42003CAD5A /* AppDelegate.m */,
+				FD9072401D242E42003CAD5A /* ViewController.h */,
+				FD9072411D242E42003CAD5A /* ViewController.m */,
+				FD9072431D242E42003CAD5A /* Main.storyboard */,
+				FD9072461D242E42003CAD5A /* Assets.xcassets */,
+				FD9072481D242E42003CAD5A /* LaunchScreen.storyboard */,
+				FD90724B1D242E42003CAD5A /* Info.plist */,
+				FD90723A1D242E42003CAD5A /* Supporting Files */,
+			);
+			path = GuZhi_V2EX;
+			sourceTree = "<group>";
+		};
+		FD90723A1D242E42003CAD5A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD90723B1D242E42003CAD5A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FD9072531D242E43003CAD5A /* GuZhi_V2EXTests */ = {
+			isa = PBXGroup;
+			children = (
+				FD9072541D242E43003CAD5A /* GuZhi_V2EXTests.m */,
+				FD9072561D242E43003CAD5A /* Info.plist */,
+			);
+			path = GuZhi_V2EXTests;
+			sourceTree = "<group>";
+		};
+		FD90725E1D242E43003CAD5A /* GuZhi_V2EXUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FD90725F1D242E43003CAD5A /* GuZhi_V2EXUITests.m */,
+				FD9072611D242E43003CAD5A /* Info.plist */,
+			);
+			path = GuZhi_V2EXUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FD9072361D242E42003CAD5A /* GuZhi_V2EX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD9072641D242E43003CAD5A /* Build configuration list for PBXNativeTarget "GuZhi_V2EX" */;
+			buildPhases = (
+				FD9072331D242E42003CAD5A /* Sources */,
+				FD9072341D242E42003CAD5A /* Frameworks */,
+				FD9072351D242E42003CAD5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GuZhi_V2EX;
+			productName = GuZhi_V2EX;
+			productReference = FD9072371D242E42003CAD5A /* GuZhi_V2EX.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FD90724F1D242E43003CAD5A /* GuZhi_V2EXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD9072671D242E43003CAD5A /* Build configuration list for PBXNativeTarget "GuZhi_V2EXTests" */;
+			buildPhases = (
+				FD90724C1D242E43003CAD5A /* Sources */,
+				FD90724D1D242E43003CAD5A /* Frameworks */,
+				FD90724E1D242E43003CAD5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD9072521D242E43003CAD5A /* PBXTargetDependency */,
+			);
+			name = GuZhi_V2EXTests;
+			productName = GuZhi_V2EXTests;
+			productReference = FD9072501D242E43003CAD5A /* GuZhi_V2EXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FD90725A1D242E43003CAD5A /* GuZhi_V2EXUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD90726A1D242E43003CAD5A /* Build configuration list for PBXNativeTarget "GuZhi_V2EXUITests" */;
+			buildPhases = (
+				FD9072571D242E43003CAD5A /* Sources */,
+				FD9072581D242E43003CAD5A /* Frameworks */,
+				FD9072591D242E43003CAD5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD90725D1D242E43003CAD5A /* PBXTargetDependency */,
+			);
+			name = GuZhi_V2EXUITests;
+			productName = GuZhi_V2EXUITests;
+			productReference = FD90725B1D242E43003CAD5A /* GuZhi_V2EXUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD90722F1D242E42003CAD5A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = thanksdanny;
+				TargetAttributes = {
+					FD9072361D242E42003CAD5A = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = TX6G2DNPWK;
+					};
+					FD90724F1D242E43003CAD5A = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = TX6G2DNPWK;
+						TestTargetID = FD9072361D242E42003CAD5A;
+					};
+					FD90725A1D242E43003CAD5A = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = TX6G2DNPWK;
+						TestTargetID = FD9072361D242E42003CAD5A;
+					};
+				};
+			};
+			buildConfigurationList = FD9072321D242E42003CAD5A /* Build configuration list for PBXProject "GuZhi_V2EX" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FD90722E1D242E42003CAD5A;
+			productRefGroup = FD9072381D242E42003CAD5A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD9072361D242E42003CAD5A /* GuZhi_V2EX */,
+				FD90724F1D242E43003CAD5A /* GuZhi_V2EXTests */,
+				FD90725A1D242E43003CAD5A /* GuZhi_V2EXUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FD9072351D242E42003CAD5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD90724A1D242E42003CAD5A /* LaunchScreen.storyboard in Resources */,
+				FD9072471D242E42003CAD5A /* Assets.xcassets in Resources */,
+				FD9072451D242E42003CAD5A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD90724E1D242E43003CAD5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD9072591D242E43003CAD5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FD9072331D242E42003CAD5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD9072421D242E42003CAD5A /* ViewController.m in Sources */,
+				FD90723F1D242E42003CAD5A /* AppDelegate.m in Sources */,
+				FD90723C1D242E42003CAD5A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD90724C1D242E43003CAD5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD9072551D242E43003CAD5A /* GuZhi_V2EXTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD9072571D242E43003CAD5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD9072601D242E43003CAD5A /* GuZhi_V2EXUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD9072521D242E43003CAD5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD9072361D242E42003CAD5A /* GuZhi_V2EX */;
+			targetProxy = FD9072511D242E43003CAD5A /* PBXContainerItemProxy */;
+		};
+		FD90725D1D242E43003CAD5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD9072361D242E42003CAD5A /* GuZhi_V2EX */;
+			targetProxy = FD90725C1D242E43003CAD5A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FD9072431D242E42003CAD5A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD9072441D242E42003CAD5A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FD9072481D242E42003CAD5A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD9072491D242E42003CAD5A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FD9072621D242E43003CAD5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FD9072631D242E43003CAD5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FD9072651D242E43003CAD5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GuZhi_V2EX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thanksdanny.GuZhi-V2EX";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FD9072661D242E43003CAD5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GuZhi_V2EX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thanksdanny.GuZhi-V2EX";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FD9072681D242E43003CAD5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GuZhi_V2EXTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thanksdanny.GuZhi-V2EXTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuZhi_V2EX.app/GuZhi_V2EX";
+			};
+			name = Debug;
+		};
+		FD9072691D242E43003CAD5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GuZhi_V2EXTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thanksdanny.GuZhi-V2EXTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuZhi_V2EX.app/GuZhi_V2EX";
+			};
+			name = Release;
+		};
+		FD90726B1D242E43003CAD5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GuZhi_V2EXUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thanksdanny.GuZhi-V2EXUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = GuZhi_V2EX;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		FD90726C1D242E43003CAD5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GuZhi_V2EXUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thanksdanny.GuZhi-V2EXUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = GuZhi_V2EX;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FD9072321D242E42003CAD5A /* Build configuration list for PBXProject "GuZhi_V2EX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD9072621D242E43003CAD5A /* Debug */,
+				FD9072631D242E43003CAD5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD9072641D242E43003CAD5A /* Build configuration list for PBXNativeTarget "GuZhi_V2EX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD9072651D242E43003CAD5A /* Debug */,
+				FD9072661D242E43003CAD5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FD9072671D242E43003CAD5A /* Build configuration list for PBXNativeTarget "GuZhi_V2EXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD9072681D242E43003CAD5A /* Debug */,
+				FD9072691D242E43003CAD5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FD90726A1D242E43003CAD5A /* Build configuration list for PBXNativeTarget "GuZhi_V2EXUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD90726B1D242E43003CAD5A /* Debug */,
+				FD90726C1D242E43003CAD5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FD90722F1D242E42003CAD5A /* Project object */;
+}
