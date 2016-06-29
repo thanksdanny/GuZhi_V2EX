@@ -10,4 +10,6 @@
 
 @interface GZTopicListCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
 @end
