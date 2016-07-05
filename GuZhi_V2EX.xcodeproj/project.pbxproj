@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD35232E1D2C34A00056CC55 /* GZRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD35232D1D2C34A00056CC55 /* GZRootViewController.m */; };
 		FD90723C1D242E42003CAD5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD90723B1D242E42003CAD5A /* main.m */; };
 		FD90723F1D242E42003CAD5A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD90723E1D242E42003CAD5A /* AppDelegate.m */; };
 		FD9072451D242E42003CAD5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD9072431D242E42003CAD5A /* Main.storyboard */; };
@@ -14,7 +15,6 @@
 		FD90724A1D242E42003CAD5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD9072481D242E42003CAD5A /* LaunchScreen.storyboard */; };
 		FD9072551D242E43003CAD5A /* GuZhi_V2EXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9072541D242E43003CAD5A /* GuZhi_V2EXTests.m */; };
 		FD9072601D242E43003CAD5A /* GuZhi_V2EXUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD90725F1D242E43003CAD5A /* GuZhi_V2EXUITests.m */; };
-		FD9072751D243463003CAD5A /* GZRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9072741D243463003CAD5A /* GZRootViewController.m */; };
 		FD9072781D243533003CAD5A /* GZTopicListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9072771D243533003CAD5A /* GZTopicListCell.m */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FD35232C1D2C34A00056CC55 /* GZRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZRootViewController.h; path = Controllers/GZRootViewController.h; sourceTree = "<group>"; };
+		FD35232D1D2C34A00056CC55 /* GZRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZRootViewController.m; path = Controllers/GZRootViewController.m; sourceTree = "<group>"; };
 		FD9072371D242E42003CAD5A /* GuZhi_V2EX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuZhi_V2EX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD90723B1D242E42003CAD5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FD90723D1D242E42003CAD5A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -50,8 +52,6 @@
 		FD90725B1D242E43003CAD5A /* GuZhi_V2EXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuZhi_V2EXUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD90725F1D242E43003CAD5A /* GuZhi_V2EXUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuZhi_V2EXUITests.m; sourceTree = "<group>"; };
 		FD9072611D242E43003CAD5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FD9072731D243463003CAD5A /* GZRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZRootViewController.h; path = Controllers/GZRootViewController.h; sourceTree = "<group>"; };
-		FD9072741D243463003CAD5A /* GZRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZRootViewController.m; path = Controllers/GZRootViewController.m; sourceTree = "<group>"; };
 		FD9072761D243533003CAD5A /* GZTopicListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZTopicListCell.h; path = Views/GZTopicListCell.h; sourceTree = "<group>"; };
 		FD9072771D243533003CAD5A /* GZTopicListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZTopicListCell.m; path = Views/GZTopicListCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,8 +163,8 @@
 		FD90726F1D243359003CAD5A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FD9072731D243463003CAD5A /* GZRootViewController.h */,
-				FD9072741D243463003CAD5A /* GZRootViewController.m */,
+				FD35232C1D2C34A00056CC55 /* GZRootViewController.h */,
+				FD35232D1D2C34A00056CC55 /* GZRootViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -303,8 +303,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD9072781D243533003CAD5A /* GZTopicListCell.m in Sources */,
+				FD35232E1D2C34A00056CC55 /* GZRootViewController.m in Sources */,
 				FD90723F1D242E42003CAD5A /* AppDelegate.m in Sources */,
-				FD9072751D243463003CAD5A /* GZRootViewController.m in Sources */,
 				FD90723C1D242E42003CAD5A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -531,6 +531,7 @@
 				FD9072661D242E43003CAD5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FD9072671D242E43003CAD5A /* Build configuration list for PBXNativeTarget "GuZhi_V2EXTests" */ = {
 			isa = XCConfigurationList;
@@ -539,6 +540,7 @@
 				FD9072691D242E43003CAD5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FD90726A1D242E43003CAD5A /* Build configuration list for PBXNativeTarget "GuZhi_V2EXUITests" */ = {
 			isa = XCConfigurationList;
@@ -547,6 +549,7 @@
 				FD90726C1D242E43003CAD5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
