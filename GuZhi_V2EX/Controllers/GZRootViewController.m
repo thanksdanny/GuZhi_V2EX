@@ -11,6 +11,10 @@
 
 @interface GZRootViewController ()
 
+@property (nonatomic, strong) NSArray *hotList;
+@property NSURLSession *session;
+@property NSMutableDictionary *hotTitle;
+
 @end
 
 @implementation GZRootViewController
@@ -18,19 +22,42 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    // 生成session
+    self.session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    [self fetchHotListData];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // 配置UI
+    [self configureUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+# pragma mark - ConfigureUI
+
+- (void)configureUI {
+    self.title = @"最新";
 }
 
-#pragma mark - Table view data source
+# pragma mark - 获取网络数据
+
+// 获取hot https://www.v2ex.com/api/topics/hot.json
+- (void)fetchHotListData {
+    NSURL *hotURL = [NSURL URLWithString:@"https://www.v2ex.com/api/topics/hot.json"];
+    
+    NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:hotURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        self.hotList = json;
+        self.hotTitle = [NSMutableDictionary dictionary];
+        for (int i = 0; i < self.hotList.count; i++) {
+//            [self.hotTitle setObject:self.hotList[i] forKey:@"title"];
+            NSLog(@"%@", self.hotList);
+        }
+        
+    }];
+    
+    
+    [dataTask resume];
+}
+
+# pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
