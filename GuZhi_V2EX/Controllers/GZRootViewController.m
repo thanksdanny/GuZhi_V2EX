@@ -11,6 +11,11 @@
 
 @interface GZRootViewController ()
 
+{
+    // 取程序沙盒地址
+    NSString *docPath;
+}
+
 @property (nonatomic, strong) NSArray *hotList;
 @property (nonatomic)  NSMutableArray *hotTitle;
 @property NSURLSession *session;
@@ -24,7 +29,12 @@
     
     // 生成session
     self.session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    [self fetchHotListData];
+    
+    // 沙盒地址
+    docPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+    NSLog(@"%@", docPath);
+
+    [self setupDataSource];
     
     // 配置UI
     [self configureUI];
@@ -56,17 +66,29 @@
         NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
         self.hotList = json;
         
-//        for (int i = 0; i < self.hotList.count; i++) {
-//            NSString *title = [self.hotList[i] objectForKey:@"title"];
-////            NSLog(@"%@", title);
-//            [self.hotTitle addObject:title];
-//        }
+        // 存储到plist
+        [self.hotList writeToFile:[docPath stringByAppendingPathComponent:@"HotData.plist"] atomically:YES];
         
-        NSLog(@"%@", self.hotTitle);
+        self.hotTitle = [NSArray arrayWithContentsOfFile:[docPath stringByAppendingPathComponent:@"HotList.plist"]][0][@"title"]; // 有问题，这里是空
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
     }];
     
     
     [dataTask resume];
+}
+
+
+- (void)setupDataSource {
+    if ([[NSFileManager defaultManager] fileExistsAtPath:[docPath stringByAppendingPathComponent:@"HotData.plist"]]) {
+        NSLog(@"有HotList.plist");
+        self.hotList = [NSArray arrayWithContentsOfFile:[docPath stringByAppendingPathComponent:@"HotData.plist"]];
+    } else {
+        NSLog(@"没hotlist");
+        [self fetchHotListData];
+    }
 }
 
 # pragma mark - Table view data source
