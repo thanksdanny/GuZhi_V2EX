@@ -8,6 +8,7 @@
 
 #import "GZRootViewController.h"
 #import "GZTopicListCell.h"
+#import "HotModel.h"
 
 @interface GZRootViewController ()
 
@@ -64,6 +65,7 @@
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:hotURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         // 解析json
         NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        
         self.hotList = json;
         
         // 存储到plist
@@ -71,6 +73,8 @@
         
         self.hotTitle = [NSArray arrayWithContentsOfFile:[docPath stringByAppendingPathComponent:@"HotList.plist"]][0][@"title"]; // 有问题，这里是空
         
+////        HotModel *model = [MTLJSONAdapter modelOfClass:[HotModel class] fromJSONDictionary:json[0] error:nil];
+//        NSLog(@"%@", model);
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
