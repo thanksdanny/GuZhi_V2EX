@@ -6,6 +6,14 @@
 //  Copyright © 2016 thanksdanny. All rights reserved.
 //
 
+/*
+ 思路：
+ 1、解析出json，存进plist
+ 2、转进模型
+ 
+ */
+
+
 #import "GZRootViewController.h"
 #import "GZTopicListCell.h"
 #import "HotModel.h"
@@ -17,8 +25,7 @@
     NSString *docPath;
 }
 
-@property (nonatomic, strong) NSArray *hotList;
-@property (nonatomic)  NSMutableArray *hotTitle;
+@property (nonatomic, strong) NSMutableArray *hotList;
 @property NSURLSession *session;
 
 @end
@@ -35,10 +42,22 @@
     docPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
     NSLog(@"%@", docPath);
 
-    [self setupDataSource];
+    // 获取数据
+    [self fetchHotListData];
+//    [self setupDataSource];
     
     // 配置UI
     [self configureUI];
+    
+}
+
+# pragma mark - 懒加载
+
+- (NSArray *)hotList {
+    if (!_hotList) {
+        _hotList = [NSMutableArray array];
+    }
+    return _hotList;
 }
 
 # pragma mark - ConfigureUI
@@ -47,14 +66,6 @@
     self.title = @"最新";
 }
 
-# pragma mark - 懒加载
-
-- (NSArray *)hotTitle {
-    if (!_hotTitle) {
-        _hotTitle = [NSMutableArray array];
-    }
-    return _hotTitle;
-}
 
 # pragma mark - 获取网络数据
 
@@ -64,17 +75,21 @@
     
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:hotURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         // 解析json
-        NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        NSArray *hotArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
         
-        self.hotList = json;
+        // 取json数组中的字典，创建model
+        for (int i = 0; i < hotArray.count; i++) {
+            NSDictionary *dict = hotArray[i];
+            NSLog(@"%@", dict);
+            HotModel *hotModel = [MTLJSONAdapter modelOfClass:[HotModel class] fromJSONDictionary:dict error:nil];
+            NSLog(@"%@", hotModel);
+            [self.hotList addObject:hotModel];
+        }
         
         // 存储到plist
-        [self.hotList writeToFile:[docPath stringByAppendingPathComponent:@"HotData.plist"] atomically:YES];
+//        [self.hotList writeToFile:[docPath stringByAppendingPathComponent:@"HotData.plist"] atomically:YES];
         
-        self.hotTitle = [NSArray arrayWithContentsOfFile:[docPath stringByAppendingPathComponent:@"HotList.plist"]][0][@"title"]; // 有问题，这里是空
         
-////        HotModel *model = [MTLJSONAdapter modelOfClass:[HotModel class] fromJSONDictionary:json[0] error:nil];
-//        NSLog(@"%@", model);
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
@@ -85,15 +100,15 @@
 }
 
 
-- (void)setupDataSource {
-    if ([[NSFileManager defaultManager] fileExistsAtPath:[docPath stringByAppendingPathComponent:@"HotData.plist"]]) {
-        NSLog(@"有HotList.plist");
-        self.hotList = [NSArray arrayWithContentsOfFile:[docPath stringByAppendingPathComponent:@"HotData.plist"]];
-    } else {
-        NSLog(@"没hotlist");
-        [self fetchHotListData];
-    }
-}
+//- (void)setupDataSource {
+//    if ([[NSFileManager defaultManager] fileExistsAtPath:[docPath stringByAppendingPathComponent:@"HotData.plist"]]) {
+//        NSLog(@"有HotList.plist");
+//        self.hotList = [NSArray arrayWithContentsOfFile:[docPath stringByAppendingPathComponent:@"HotData.plist"]];
+//    } else {
+//        NSLog(@"没hotlist");
+//        [self fetchHotListData];
+//    }
+//}
 
 # pragma mark - Table view data source
 
@@ -104,13 +119,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 10;
+    return self.hotList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GZTopicListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    
-    cell.titleLable.text = @"今晚吃d咩啊";
+//    cell.titleLable.text = self.hotTitle[indexPath.row];
+    cell.titleLable.text = @"test";
     
     
     return cell;

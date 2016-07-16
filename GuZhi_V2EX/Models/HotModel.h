@@ -6,13 +6,15 @@
 //  Copyright © 2016 thanksdanny. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import <Mantle/Mantle.h>
+
 @class MemberModel;
 @class NodeModel;
 
 @interface HotModel : MTLModel <MTLJSONSerializing>
 
-@property (nonatomic, copy) NSString *id;
+@property (nonatomic, assign) NSUInteger id;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *url;
 @property (nonatomic, copy) NSString *content;
@@ -28,7 +30,5 @@
 @property (nonatomic, assign) NSArray *hotArray;
 
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
-- (NSDictionary *)toDictionary;
 
 @end

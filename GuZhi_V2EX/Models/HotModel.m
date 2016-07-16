@@ -7,6 +7,8 @@
 //
 
 #import "HotModel.h"
+#import "NodeModel.h"
+#import "MemberModel.h"
 
 @implementation HotModel
 
@@ -21,46 +23,27 @@
              @"created" : @"created",
              @"last_modified" : @"last_modified",
              @"last_touched" : @"last_touched",
-//             @"member" : @"member",
-//             @"node" : @"node",
+             @"member" : @"member",
+             @"node" : @"node",
              };
 }
 
+//+ (NSValueTransformer *)URLJSONTransformer {
+//    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
+//}
+//
+//+ (NSValueTransformer *)HTMLURLJSONTransformer {
+//    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
+//}
+//
+//- (instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError **)error {
+//    self = [super initWithDictionary:dictionaryValue error:error];
+//    if (self == nil) return nil;
+//    
+//    // Store a value that needs to be determined locally upon initialization.
+//    
+//    return self;
+//}
 
-- (instancetype)initWithDict:(NSDictionary *)dictionary {
-    self = [super init];
-//    if (![dictionary[]) {
-//        <#statements#>
-//    }
-    
-    return self;
-}
-
-
-- (NSDictionary *)toDictionary {
-    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
-//    if (self.content_rendered) {
-//        <#statements#>
-//    }
-    return dictionary;
-}
-
-/**
- 模型数据的加载，返回arry以后我们就只要使用array就能使用这个模型类里面的数据也就是使用plist数据
- */
-//懒加载plist文件，返回一个数据，后面直接使用旧可以
-- (NSMutableArray *)hotArray {
-    if (!_hotArray) {
-        NSArray *arr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"HotList.plist" ofType:nil]];
-        NSMutableArray *hotArray = [NSMutableArray array];
-        
-        for (NSDictionary *dic in arr) {
-            HotModel *model = [[HotModel alloc] initWithDict:dic];
-            
-            [hotArray addObject:model];
-        }
-        
-    }
-}
 
 @end
