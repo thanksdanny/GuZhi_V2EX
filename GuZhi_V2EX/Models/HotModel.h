@@ -21,8 +21,8 @@
 @property (nonatomic, copy) NSString *content_rendered;
 @property (nonatomic, copy) NSString *replies;
 @property (nonatomic, copy) NSNumber *created;
-@property (nonatomic, copy) NSString *last_modified;
-@property (nonatomic, copy) NSString *last_touched;
+@property (nonatomic, copy) NSNumber *last_modified;
+@property (nonatomic, copy) NSNumber *last_touched;
 
 @property (nonatomic, copy) MemberModel *member;
 @property (nonatomic, copy) NodeModel *node;

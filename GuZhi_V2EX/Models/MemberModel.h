@@ -8,7 +8,7 @@
 
 #import <Mantle/Mantle.h>
 
-@interface MemberModel : MTLModel
+@interface MemberModel : MTLModel<MTLJSONSerializing>
 
 @property (nonatomic, copy) NSString *memberId;
 @property (nonatomic, copy) NSString *memberName;

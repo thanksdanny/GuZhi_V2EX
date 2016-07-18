@@ -24,10 +24,21 @@
              @"last_modified" : @"last_modified",
              @"last_touched" : @"last_touched",
              @"member" : @"member",
-             @"node" : @"node",
+             //@"node" : @"node",
              };
 }
 
++ (NSValueTransformer *)memberJSONTransformer {
+    return [MTLValueTransformer transformerUsingForwardBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
+        return [MTLJSONAdapter modelOfClass:[MemberModel class] fromJSONDictionary:value error:nil];
+    }];
+}
+
++ (NSValueTransformer *)repliesJSONTransformer {
+    return [MTLValueTransformer transformerUsingForwardBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
+        return @([value integerValue]).stringValue;
+    }];
+}
 //+ (NSValueTransformer *)URLJSONTransformer {
 //    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 //}

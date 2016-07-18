@@ -9,5 +9,8 @@
 #import "MemberModel.h"
 
 @implementation MemberModel
-
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+             };
+}
 @end

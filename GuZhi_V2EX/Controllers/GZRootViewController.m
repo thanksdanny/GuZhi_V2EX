@@ -81,7 +81,8 @@
         for (int i = 0; i < hotArray.count; i++) {
             NSDictionary *dict = hotArray[i];
             NSLog(@"%@", dict);
-            HotModel *hotModel = [MTLJSONAdapter modelOfClass:[HotModel class] fromJSONDictionary:dict error:nil];
+            NSError *err = nil;
+            HotModel *hotModel = [MTLJSONAdapter modelOfClass:[HotModel class] fromJSONDictionary:dict error:&err];
             NSLog(@"%@", hotModel);
             [self.hotList addObject:hotModel];
         }
