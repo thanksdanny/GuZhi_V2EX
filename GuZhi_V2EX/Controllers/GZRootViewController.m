@@ -28,6 +28,7 @@
 @property (nonatomic, strong) NSMutableArray *hotList;
 @property NSURLSession *session;
 
+
 @end
 
 @implementation GZRootViewController
@@ -41,6 +42,7 @@
     // 沙盒地址
     docPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
     NSLog(@"%@", docPath);
+    
 
     // 获取数据
     [self fetchHotListData];
@@ -80,13 +82,13 @@
         // 取json数组中的字典，创建model
         for (int i = 0; i < hotArray.count; i++) {
             NSDictionary *dict = hotArray[i];
-            NSLog(@"%@", dict);
+            // 创建error，调试用
             NSError *err = nil;
             HotModel *hotModel = [MTLJSONAdapter modelOfClass:[HotModel class] fromJSONDictionary:dict error:&err];
-            NSLog(@"%@", hotModel);
             [self.hotList addObject:hotModel];
         }
-        
+        NSLog(@"=============begin==============");
+        NSLog(@"%@",self.hotList);
         // 存储到plist
 //        [self.hotList writeToFile:[docPath stringByAppendingPathComponent:@"HotData.plist"] atomically:YES];
         
