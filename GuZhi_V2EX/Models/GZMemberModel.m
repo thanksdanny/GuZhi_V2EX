@@ -1,14 +1,15 @@
 //
-//  MemberModel.m
+//  GZMemberModel.m
 //  GuZhi_V2EX
 //
-//  Created by Danny Ho on 7/13/16.
+//  Created by Danny Ho on 7/27/16.
 //  Copyright © 2016 thanksdanny. All rights reserved.
 //
 
-#import "MemberModel.h"
+#import "GZMemberModel.h"
 
-@implementation MemberModel
+@implementation GZMemberModel
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
              };

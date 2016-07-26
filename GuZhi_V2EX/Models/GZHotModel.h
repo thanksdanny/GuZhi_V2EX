@@ -1,18 +1,17 @@
 //
-//  HotModel.h
+//  GZHotModel.h
 //  GuZhi_V2EX
 //
-//  Created by Danny Ho on 7/12/16.
+//  Created by Danny Ho on 7/27/16.
 //  Copyright © 2016 thanksdanny. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <Mantle/Mantle.h>
 
-@class MemberModel;
-@class NodeModel;
+@class GZMemberModel;
+@class GZNodeModel;
 
-@interface HotModel : MTLModel <MTLJSONSerializing>
+@interface GZHotModel : MTLModel <MTLJSONSerializing>
 
 @property (nonatomic, assign) NSUInteger id;
 @property (nonatomic, copy) NSString *title;
@@ -24,11 +23,9 @@
 @property (nonatomic, copy) NSNumber *last_modified;
 @property (nonatomic, copy) NSNumber *last_touched;
 
-@property (nonatomic, copy) MemberModel *member;
-@property (nonatomic, copy) NodeModel *node;
+@property (nonatomic, copy) GZMemberModel *member;
+@property (nonatomic, copy) GZNodeModel *node;
 
 @property (nonatomic, assign) NSArray *hotArray;
-
-
 
 @end

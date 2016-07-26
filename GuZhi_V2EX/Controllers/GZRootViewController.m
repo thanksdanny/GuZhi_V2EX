@@ -16,7 +16,7 @@
 
 #import "GZRootViewController.h"
 #import "GZTopicListCell.h"
-#import "HotModel.h"
+
 
 @interface GZRootViewController ()
 
@@ -84,8 +84,8 @@
             NSDictionary *dict = hotArray[i];
             // 创建error，调试用
             NSError *err = nil;
-            HotModel *hotModel = [MTLJSONAdapter modelOfClass:[HotModel class] fromJSONDictionary:dict error:&err];
-            [self.hotList addObject:hotModel];
+//            HotModel *hotModel = [MTLJSONAdapter modelOfClass:[HotModel class] fromJSONDictionary:dict error:&err];
+//            [self.hotList addObject:hotModel];
         }
         NSLog(@"=============begin==============");
         NSLog(@"%@",self.hotList);
