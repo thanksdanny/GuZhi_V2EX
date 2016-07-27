@@ -13,6 +13,7 @@
 		FD65E7261D47C664009D2E5E /* GZHotModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FD65E7251D47C664009D2E5E /* GZHotModel.m */; };
 		FD65E7291D47C6C7009D2E5E /* GZMemberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FD65E7281D47C6C7009D2E5E /* GZMemberModel.m */; };
 		FD65E72C1D47C6DB009D2E5E /* GZNodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FD65E72B1D47C6DB009D2E5E /* GZNodeModel.m */; };
+		FD65E72F1D487942009D2E5E /* GZDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD65E72E1D487942009D2E5E /* GZDataManager.m */; };
 		FD90723C1D242E42003CAD5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD90723B1D242E42003CAD5A /* main.m */; };
 		FD90723F1D242E42003CAD5A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD90723E1D242E42003CAD5A /* AppDelegate.m */; };
 		FD9072451D242E42003CAD5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD9072431D242E42003CAD5A /* Main.storyboard */; };
@@ -54,6 +55,8 @@
 		FD65E7281D47C6C7009D2E5E /* GZMemberModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZMemberModel.m; path = Models/GZMemberModel.m; sourceTree = "<group>"; };
 		FD65E72A1D47C6DB009D2E5E /* GZNodeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZNodeModel.h; path = Models/GZNodeModel.h; sourceTree = "<group>"; };
 		FD65E72B1D47C6DB009D2E5E /* GZNodeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZNodeModel.m; path = Models/GZNodeModel.m; sourceTree = "<group>"; };
+		FD65E72D1D487942009D2E5E /* GZDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZDataManager.h; path = Managers/GZDataManager.h; sourceTree = "<group>"; };
+		FD65E72E1D487942009D2E5E /* GZDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZDataManager.m; path = Managers/GZDataManager.m; sourceTree = "<group>"; };
 		FD9072371D242E42003CAD5A /* GuZhi_V2EX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuZhi_V2EX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD90723B1D242E42003CAD5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FD90723D1D242E42003CAD5A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -118,6 +121,8 @@
 		FD19631E1D4395FB001E83EC /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				FD65E72D1D487942009D2E5E /* GZDataManager.h */,
+				FD65E72E1D487942009D2E5E /* GZDataManager.m */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -413,6 +418,7 @@
 				FD90723F1D242E42003CAD5A /* AppDelegate.m in Sources */,
 				FD90723C1D242E42003CAD5A /* main.m in Sources */,
 				FD65E7291D47C6C7009D2E5E /* GZMemberModel.m in Sources */,
+				FD65E72F1D487942009D2E5E /* GZDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

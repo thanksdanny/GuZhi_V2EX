@@ -12,6 +12,12 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
+             @"memberId"           : @"id",
+             @"memberName"         : @"username",
+             @"memberTagline"      : @"tagline",
+             @"memberAvatarMini"   : @"avatar_mini",
+             @"memberAvatarNormal" : @"avatar_normal",
+             @"memberAvatarLarge"  : @"avatar_large",
              };
 }
 @end
