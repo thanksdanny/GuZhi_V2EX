@@ -11,10 +11,14 @@
 
 @interface GZDataManager : NSObject
 
-+ (instancetype)sharedInstance;
+@property (nonatomic, assign) BOOL preferHttps;
+
+// 单例
++ (instancetype)manager;
 
 #pragma mark - GET
-- (void)getHotTopicsSuccess:(void (^)(NSArray *list))success
-                     failed:(void (^)(NSError *error))failure;
+
+- (NSURLSessionDataTask *)getHotTopicsSuccess:(void (^)(GZHotList *list))succes
+                                      failure:(void (^)(NSError *error))failure;
 
 @end

@@ -29,3 +29,12 @@
 @property (nonatomic, assign) NSArray *hotArray;
 
 @end
+
+
+@interface GZHotList : NSObject
+
+@property (nonatomic, strong) NSArray *hotList;
+
+- (instancetype)initWithArray:(NSArray *)array;
+
+@end

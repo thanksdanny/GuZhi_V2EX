@@ -65,3 +65,23 @@
 //}
 
 @end
+
+
+@implementation GZHotList
+
+- (instancetype)initWithArray:(NSArray *)array {
+    if (self = [super init]) {
+        NSMutableArray *list = [[NSMutableArray alloc] init];
+        NSError *error = nil;
+        
+        for (NSDictionary *dict in array) {
+            GZHotModel *model = [[GZHotModel alloc] initWithDictionary:dict error:&error];
+            [list addObject:model];
+        }
+        self.hotList = list;
+    }
+    
+    return self;
+}
+
+@end

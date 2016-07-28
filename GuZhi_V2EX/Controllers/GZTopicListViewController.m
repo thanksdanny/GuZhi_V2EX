@@ -22,11 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.dataManager getHotTopicsSuccess:^(NSArray *list) {
-        NSLog(@"hahah");
-    } failed:^(NSError *error) {
-        NSLog(@"失败咯");
-    }];
+    
 }
 
 - (void)configureUI {
