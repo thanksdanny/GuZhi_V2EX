@@ -42,6 +42,8 @@
 #import "GZDataManager.h"
 #import <AFNetworking.h>
 #import "GZHotModel.h"
+#import "GZTopicModel.h"
+#import "GZReplyModel.h"
 
 #define BASE_URL @"https://www.v2ex.com/"
 
@@ -172,6 +174,47 @@ typedef NS_ENUM(NSInteger, GZRequestMethod) {
     } failure:^(NSError *error) {
         failure(error);
     }];
+}
+
+// 请求主题详情
+- (NSURLSessionDataTask *)getTopicWithTopicId:(NSString *)topicId
+                                      success:(void (^)(GZTopicModel *model))success
+                                      failure:(void (^)(NSError *error))failure {
+    NSDictionary *parameters;
+    if (topicId) {
+        parameters = @{@"id" : topicId};
+    }
+    return [self requestWithMethod:GZRequestMethodJSONGET
+                         URLString:@"/api/topics/show.json"
+                        parameters:parameters
+                           success:^(NSURLSessionDataTask *task, id responseObject) {
+                               NSError *error = nil;
+                               GZTopicModel *model = [[GZTopicModel alloc] initWithDictionary:[responseObject firstObject] error:&error];
+                               success(model);
+                           }
+                           failure:^(NSError *error) {
+                               failure(error);
+                           }];
+}
+
+// 请求详情评论
+- (NSURLSessionDataTask *)getRepliesWithTopicId:(NSString *)topicId
+                                        success:(void (^)(GZReplyList *list))success
+                                        failure:(void (^)(NSError *error))failure {
+    NSDictionary *parameters;
+    if (topicId) {
+        parameters = @{@"id" : topicId};
+    }
+    return [self requestWithMethod:GZRequestMethodJSONGET
+                         URLString:@"/api/replies/show.json"
+                        parameters:parameters
+                           success:^(NSURLSessionDataTask *task, id responseObject) {
+                               GZReplyList *list = [[GZReplyList alloc] initWithArray:responseObject];
+                               success(list);
+                           }
+                           failure:^(NSError *error) {
+                               failure(error);
+                           }];
 }
 
 
