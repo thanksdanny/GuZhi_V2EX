@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		EE4825D73E4C0EE50EE7E356 /* libPods-GuZhi_V2EX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0271DB8582CCBFF70D917ACE /* libPods-GuZhi_V2EX.a */; };
-		FD35232E1D2C34A00056CC55 /* GZRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD35232D1D2C34A00056CC55 /* GZRootViewController.m */; };
 		FD65E7231D47C42B009D2E5E /* GZTopicListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD65E7221D47C42B009D2E5E /* GZTopicListViewController.m */; };
 		FD65E7261D47C664009D2E5E /* GZHotModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FD65E7251D47C664009D2E5E /* GZHotModel.m */; };
 		FD65E7291D47C6C7009D2E5E /* GZMemberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FD65E7281D47C6C7009D2E5E /* GZMemberModel.m */; };
@@ -22,6 +21,8 @@
 		FD9072551D242E43003CAD5A /* GuZhi_V2EXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9072541D242E43003CAD5A /* GuZhi_V2EXTests.m */; };
 		FD9072601D242E43003CAD5A /* GuZhi_V2EXUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD90725F1D242E43003CAD5A /* GuZhi_V2EXUITests.m */; };
 		FD9072781D243533003CAD5A /* GZTopicListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9072771D243533003CAD5A /* GZTopicListCell.m */; };
+		FDBEE5541D4D132C00EC5388 /* GZReplyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBEE5531D4D132C00EC5388 /* GZReplyModel.m */; };
+		FDBEE5571D4D1F6B00EC5388 /* GZTopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBEE5561D4D1F6B00EC5388 /* GZTopicModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +46,6 @@
 		0271DB8582CCBFF70D917ACE /* libPods-GuZhi_V2EX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GuZhi_V2EX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1996B3157C20E7B6488C1327 /* Pods-GuZhi_V2EX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuZhi_V2EX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuZhi_V2EX/Pods-GuZhi_V2EX.debug.xcconfig"; sourceTree = "<group>"; };
 		EA71F6C5A787FE6E04F186D1 /* Pods-GuZhi_V2EX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuZhi_V2EX.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuZhi_V2EX/Pods-GuZhi_V2EX.release.xcconfig"; sourceTree = "<group>"; };
-		FD35232C1D2C34A00056CC55 /* GZRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZRootViewController.h; path = Controllers/GZRootViewController.h; sourceTree = "<group>"; };
-		FD35232D1D2C34A00056CC55 /* GZRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZRootViewController.m; path = Controllers/GZRootViewController.m; sourceTree = "<group>"; };
 		FD65E7211D47C42B009D2E5E /* GZTopicListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZTopicListViewController.h; path = Controllers/GZTopicListViewController.h; sourceTree = "<group>"; };
 		FD65E7221D47C42B009D2E5E /* GZTopicListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZTopicListViewController.m; path = Controllers/GZTopicListViewController.m; sourceTree = "<group>"; };
 		FD65E7241D47C664009D2E5E /* GZHotModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZHotModel.h; path = Models/GZHotModel.h; sourceTree = "<group>"; };
@@ -73,6 +72,10 @@
 		FD9072611D242E43003CAD5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD9072761D243533003CAD5A /* GZTopicListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZTopicListCell.h; path = Views/GZTopicListCell.h; sourceTree = "<group>"; };
 		FD9072771D243533003CAD5A /* GZTopicListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZTopicListCell.m; path = Views/GZTopicListCell.m; sourceTree = "<group>"; };
+		FDBEE5521D4D132C00EC5388 /* GZReplyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZReplyModel.h; path = Models/GZReplyModel.h; sourceTree = "<group>"; };
+		FDBEE5531D4D132C00EC5388 /* GZReplyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZReplyModel.m; path = Models/GZReplyModel.m; sourceTree = "<group>"; };
+		FDBEE5551D4D1F6B00EC5388 /* GZTopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZTopicModel.h; path = Models/GZTopicModel.h; sourceTree = "<group>"; };
+		FDBEE5561D4D1F6B00EC5388 /* GZTopicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZTopicModel.m; path = Models/GZTopicModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +214,10 @@
 				FD65E7281D47C6C7009D2E5E /* GZMemberModel.m */,
 				FD65E72A1D47C6DB009D2E5E /* GZNodeModel.h */,
 				FD65E72B1D47C6DB009D2E5E /* GZNodeModel.m */,
+				FDBEE5521D4D132C00EC5388 /* GZReplyModel.h */,
+				FDBEE5531D4D132C00EC5388 /* GZReplyModel.m */,
+				FDBEE5551D4D1F6B00EC5388 /* GZTopicModel.h */,
+				FDBEE5561D4D1F6B00EC5388 /* GZTopicModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -218,8 +225,6 @@
 		FD90726F1D243359003CAD5A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FD35232C1D2C34A00056CC55 /* GZRootViewController.h */,
-				FD35232D1D2C34A00056CC55 /* GZRootViewController.m */,
 				FD65E7211D47C42B009D2E5E /* GZTopicListViewController.h */,
 				FD65E7221D47C42B009D2E5E /* GZTopicListViewController.m */,
 			);
@@ -410,11 +415,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDBEE5571D4D1F6B00EC5388 /* GZTopicModel.m in Sources */,
 				FD65E72C1D47C6DB009D2E5E /* GZNodeModel.m in Sources */,
 				FD9072781D243533003CAD5A /* GZTopicListCell.m in Sources */,
 				FD65E7261D47C664009D2E5E /* GZHotModel.m in Sources */,
-				FD35232E1D2C34A00056CC55 /* GZRootViewController.m in Sources */,
 				FD65E7231D47C42B009D2E5E /* GZTopicListViewController.m in Sources */,
+				FDBEE5541D4D132C00EC5388 /* GZReplyModel.m in Sources */,
 				FD90723F1D242E42003CAD5A /* AppDelegate.m in Sources */,
 				FD90723C1D242E42003CAD5A /* main.m in Sources */,
 				FD65E7291D47C6C7009D2E5E /* GZMemberModel.m in Sources */,

@@ -17,5 +17,5 @@
 @property (nonatomic, copy) NSString *memberAvatarNormal;
 @property (nonatomic, copy) NSString *memberAvatarLarge;
 
-
 @end
+

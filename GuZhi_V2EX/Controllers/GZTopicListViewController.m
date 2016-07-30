@@ -43,30 +43,31 @@
     self.view.backgroundColor = [UIColor redColor];
     
     
-    
 }
 
 - (void)configureRefresh {
-    
-    __unsafe_unretained UITableView *tableView = self.tableView;
-    
+
     // 下拉刷新
-    tableView.mj_header = [MJRefreshHeader headerWithRefreshingBlock:^{
+    self.tableView.mj_header = [MJRefreshHeader headerWithRefreshingBlock:^{
         
         [self updateHotData];
         
-        [tableView.mj_header endRefreshing];
+        [self.tableView.mj_header endRefreshing];
     }];
     
+//    self.tableView.mj_header = [MJRefreshHeader headerWithRefreshingTarget:self
+//                                                          refreshingAction:@selector(updateHotData)];
+
+    
     // 设置自动切换透明度（在导航栏下面自动隐藏）
-    tableView.mj_header.automaticallyChangeAlpha = YES;
+    self.tableView.mj_header.automaticallyChangeAlpha = YES;
     
     // 上拉刷新
-    tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         
         [self updateHotData];
         // 结束刷新
-        [tableView.mj_footer endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
     }];
 }
 

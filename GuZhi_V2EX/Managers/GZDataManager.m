@@ -35,6 +35,10 @@
  AFCompoundResponseSerializer       组合
  */
 
+
+// 主题回复 http://www.v2ex.com/api/replies/show.json?topic_id=296023
+// 主题详情 http://www.v2ex.com/api/topics/show.json?id=296023
+
 #import "GZDataManager.h"
 #import <AFNetworking.h>
 #import "GZHotModel.h"
