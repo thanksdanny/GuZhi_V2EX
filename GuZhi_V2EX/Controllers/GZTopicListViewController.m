@@ -11,11 +11,12 @@
 #import "GZTopicListCell.h"
 #import "GZDataManager.h"
 #import "GZHotModel.h"
+#import "MJRefresh.h"
 
-@interface GZTopicListViewController ()
+@interface GZTopicListViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) GZHotList *hotList;
-
+@property (nonatomic, strong) NSMutableArray *dataArray;
 
 @end
 
@@ -25,21 +26,13 @@
     [super viewDidLoad];
     
     [self configureUI];
+    [self configureRefresh];
     
-    [[GZDataManager shareManager] getHotTopicsSuccess:^(GZHotList *list) {
-        NSLog(@"请求hotlist成功");
-        self.hotList = list;
-    } failure:^(NSError *error) {
-        NSLog(@"%@", error);
-    }];
 }
 
-//- (id)test {
-//    return [[GZDataManager shareManager] getHotTopicsSuccess:^(GZHotList *list) {
-//        NSLog(@"%@", list);
-//    } failure:^(NSError *error) {
-//        NSLog(@"lol");
-//    }];
+//- (void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+//    [self.tableView.mj_header beginRefreshing];
 //}
 
 
@@ -47,6 +40,34 @@
 
 - (void)configureUI {
     self.title = @"最热";
+    self.view.backgroundColor = [UIColor redColor];
+    
+    
+    
+}
+
+- (void)configureRefresh {
+    
+    __unsafe_unretained UITableView *tableView = self.tableView;
+    
+    // 下拉刷新
+    tableView.mj_header = [MJRefreshHeader headerWithRefreshingBlock:^{
+        
+        [self updateHotData];
+        
+        [tableView.mj_header endRefreshing];
+    }];
+    
+    // 设置自动切换透明度（在导航栏下面自动隐藏）
+    tableView.mj_header.automaticallyChangeAlpha = YES;
+    
+    // 上拉刷新
+    tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        
+        [self updateHotData];
+        // 结束刷新
+        [tableView.mj_footer endRefreshing];
+    }];
 }
 
 
@@ -56,6 +77,16 @@
     _hotList = hotList;
     
     [self.tableView reloadData];
+}
+
+- (void)updateHotData {
+    // 首页获取数据
+    [[GZDataManager shareManager] getHotTopicsSuccess:^(GZHotList *list) {
+        NSLog(@"请求hotlist成功");
+        self.hotList = list;
+    } failure:^(NSError *error) {
+        NSLog(@"%@", error);
+    }];
 }
 
 
