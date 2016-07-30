@@ -14,7 +14,7 @@
 @property (nonatomic, assign) BOOL preferHttps;
 
 // 单例
-+ (instancetype)manager;
++ (instancetype)shareManager;
 
 #pragma mark - GET
 

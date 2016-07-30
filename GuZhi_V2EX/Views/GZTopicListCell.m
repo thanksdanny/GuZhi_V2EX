@@ -8,16 +8,46 @@
 
 #import "GZTopicListCell.h"
 
+@interface GZTopicListCell ()
+
+@end
+
+
 @implementation GZTopicListCell
 
-- (void)awakeFromNib {
-    // Initialization code
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
+    if (self) {
+        self.clipsToBounds = YES;
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        [self configureViews];
+    }
+    
+    return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-self->_titleLable;
-    // Configure the view for the selected state
+
+#pragma mark - Congifure Views
+
+// 手写界面的时候在这配置ui
+- (void)configureViews {
+
 }
+
+#pragma mark - Data Methods
+
+- (void)setModel:(GZHotModel *)model {
+    _model = model;
+    
+    self.titleLable.text = model.title;
+    
+}
+
+//- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+//    [super setSelected:selected animated:animated];
+//    
+//}
 
 @end

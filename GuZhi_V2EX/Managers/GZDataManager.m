@@ -81,7 +81,7 @@ typedef NS_ENUM(NSInteger, GZRequestMethod) {
 }
 
 
-+ (instancetype)manager {
++ (instancetype)shareManager {
     static GZDataManager *manager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

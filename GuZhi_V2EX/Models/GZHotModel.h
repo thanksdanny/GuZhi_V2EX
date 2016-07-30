@@ -33,7 +33,7 @@
 
 @interface GZHotList : NSObject
 
-@property (nonatomic, strong) NSArray *hotList;
+@property (nonatomic, strong) NSArray *list;
 
 - (instancetype)initWithArray:(NSArray *)array;
 

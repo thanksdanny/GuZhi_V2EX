@@ -78,7 +78,7 @@
             GZHotModel *model = [[GZHotModel alloc] initWithDictionary:dict error:&error];
             [list addObject:model];
         }
-        self.hotList = list;
+        self.list = list;
     }
     
     return self;
