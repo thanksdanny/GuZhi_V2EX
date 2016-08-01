@@ -98,6 +98,7 @@
     if ([segue.identifier isEqualToString:@"TODETAIL"]) {
         GZDetailTopicViewController *detailVC = [segue destinationViewController];
         
+        NSLog(@"%@",[self.hotList.list[self.tableView.indexPathForSelectedRow.row] class]);
         // 传选中的model过去
         detailVC.info = self.hotList.list[self.tableView.indexPathForSelectedRow.row];
     }

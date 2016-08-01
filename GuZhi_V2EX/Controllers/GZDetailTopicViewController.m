@@ -7,7 +7,7 @@
 //
 
 #import "GZDetailTopicViewController.h"
-#import "GZTopicModel.h"
+#import "GZHotModel.h"
 
 @interface GZDetailTopicViewController () <UITableViewDelegate, UITableViewDataSource>
 {
@@ -47,7 +47,7 @@
     headerView = [[UIView alloc] init];
     headerView.clipsToBounds = YES; // clipsToBounds:如果子视图的范围超出了父视图的边界，那么超出的部分就会被裁剪掉。
     
-    NSString *dataString = self.info.topicTitle; // 这句可能有问题
+    NSString *dataString = self.info.title; // 这句可能有问题
     UIFont *dataFont = [UIFont systemFontOfSize:14];
     CGSize titleSize = [dataString boundingRectWithSize:CGSizeMake(CGRectGetWidth([UIScreen mainScreen].bounds) - 54, 400)
                                                 options:NSStringDrawingUsesLineFragmentOrigin
@@ -60,7 +60,7 @@
     title.font = dataFont;
     title.numberOfLines = 0;
     title.frame = CGRectMake(8, 10, titleSize.width, titleSize.height);
-    title.text = self.info.topicTitle;
+    title.text = self.info.title;
     [headerView addSubview:title];
    
 }
