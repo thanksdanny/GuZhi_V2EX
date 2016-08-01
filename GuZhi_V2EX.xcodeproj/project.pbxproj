@@ -23,6 +23,7 @@
 		FD9072781D243533003CAD5A /* GZTopicListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9072771D243533003CAD5A /* GZTopicListCell.m */; };
 		FDBEE5541D4D132C00EC5388 /* GZReplyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBEE5531D4D132C00EC5388 /* GZReplyModel.m */; };
 		FDBEE5571D4D1F6B00EC5388 /* GZTopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBEE5561D4D1F6B00EC5388 /* GZTopicModel.m */; };
+		FDBEE55D1D4D309800EC5388 /* GZDetailTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBEE55C1D4D309800EC5388 /* GZDetailTopicViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,8 @@
 		FDBEE5531D4D132C00EC5388 /* GZReplyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZReplyModel.m; path = Models/GZReplyModel.m; sourceTree = "<group>"; };
 		FDBEE5551D4D1F6B00EC5388 /* GZTopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZTopicModel.h; path = Models/GZTopicModel.h; sourceTree = "<group>"; };
 		FDBEE5561D4D1F6B00EC5388 /* GZTopicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZTopicModel.m; path = Models/GZTopicModel.m; sourceTree = "<group>"; };
+		FDBEE55B1D4D309800EC5388 /* GZDetailTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZDetailTopicViewController.h; path = Controllers/GZDetailTopicViewController.h; sourceTree = "<group>"; };
+		FDBEE55C1D4D309800EC5388 /* GZDetailTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZDetailTopicViewController.m; path = Controllers/GZDetailTopicViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +230,8 @@
 			children = (
 				FD65E7211D47C42B009D2E5E /* GZTopicListViewController.h */,
 				FD65E7221D47C42B009D2E5E /* GZTopicListViewController.m */,
+				FDBEE55B1D4D309800EC5388 /* GZDetailTopicViewController.h */,
+				FDBEE55C1D4D309800EC5388 /* GZDetailTopicViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -418,6 +423,7 @@
 				FDBEE5571D4D1F6B00EC5388 /* GZTopicModel.m in Sources */,
 				FD65E72C1D47C6DB009D2E5E /* GZNodeModel.m in Sources */,
 				FD9072781D243533003CAD5A /* GZTopicListCell.m in Sources */,
+				FDBEE55D1D4D309800EC5388 /* GZDetailTopicViewController.m in Sources */,
 				FD65E7261D47C664009D2E5E /* GZHotModel.m in Sources */,
 				FD65E7231D47C42B009D2E5E /* GZTopicListViewController.m in Sources */,
 				FDBEE5541D4D132C00EC5388 /* GZReplyModel.m in Sources */,

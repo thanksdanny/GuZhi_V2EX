@@ -40,7 +40,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="titleLable" destination="mKy-Rc-1LH" id="1g5-w5-7jM"/>
-                                    <segue destination="0uj-qi-pfy" kind="show" identifier="TODETAIL" id="ZBZ-fl-wXb"/>
+                                    <segue destination="UE2-Cj-PSf" kind="show" identifier="TODETAIL" id="sZW-dd-PXF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -55,33 +55,36 @@
             </objects>
             <point key="canvasLocation" x="632" y="822"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="rdH-or-pgW">
+        <!--Detail Topic View Controller-->
+        <scene sceneID="dWF-Gs-EcS">
             <objects>
-                <tableViewController id="0uj-qi-pfy" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Roi-L9-MnS">
+                <tableViewController id="UE2-Cj-PSf" customClass="GZDetailTopicViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gDs-rT-yX8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fak-j9-88T">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DETAILCELL" id="3yR-Df-HoW">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fak-j9-88T" id="rmh-VJ-FsI">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3yR-Df-HoW" id="f0L-0Z-1NP">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="0uj-qi-pfy" id="1ft-OU-pis"/>
-                            <outlet property="delegate" destination="0uj-qi-pfy" id="jeu-47-zd6"/>
+                            <outlet property="dataSource" destination="UE2-Cj-PSf" id="47B-8r-VHT"/>
+                            <outlet property="delegate" destination="UE2-Cj-PSf" id="CV1-wj-0Sy"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="detailTable" destination="gDs-rT-yX8" id="kW3-td-PHz"/>
+                    </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="soT-54-vrE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fTx-ps-fUa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1289" y="822"/>
+            <point key="canvasLocation" x="1345" y="822"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="m3E-Ko-Bsq">

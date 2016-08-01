@@ -8,6 +8,7 @@
 
 
 #import "GZTopicListViewController.h"
+#import "GZDetailTopicViewController.h"
 #import "GZTopicListCell.h"
 #import "GZDataManager.h"
 #import "GZHotModel.h"
@@ -28,6 +29,7 @@
     [self configureUI];
     [self configureRefresh];
     
+
 }
 
 //- (void)viewWillAppear:(BOOL)animated {
@@ -42,8 +44,7 @@
     self.title = @"最热";
     self.view.backgroundColor = [UIColor redColor];
     
-    
-}
+    }
 
 - (void)configureRefresh {
 
@@ -90,6 +91,17 @@
     }];
 }
 
+
+#pragma mark - segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"TODETAIL"]) {
+        GZDetailTopicViewController *detailVC = [segue destinationViewController];
+        
+        // 传选中的model过去
+        detailVC.info = self.hotList.list[self.tableView.indexPathForSelectedRow.row];
+    }
+}
 
 #pragma mark - Table view delagate
 
