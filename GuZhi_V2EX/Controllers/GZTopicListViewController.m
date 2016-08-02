@@ -29,13 +29,7 @@
     [self configureUI];
     [self configureRefresh];
     
-
 }
-
-//- (void)viewWillAppear:(BOOL)animated {
-//    [super viewWillAppear:animated];
-//    [self.tableView.mj_header beginRefreshing];
-//}
 
 
 #pragma mark - Configure
@@ -89,6 +83,7 @@
     } failure:^(NSError *error) {
         NSLog(@"%@", error);
     }];
+//    NSLog(@"%@", [self.hotList.list[0] valueForKey:@"id"]);
 }
 
 

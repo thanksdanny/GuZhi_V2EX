@@ -59,18 +59,58 @@
         <scene sceneID="dWF-Gs-EcS">
             <objects>
                 <tableViewController id="UE2-Cj-PSf" customClass="GZDetailTopicViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gDs-rT-yX8">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="gDs-rT-yX8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DETAILCELL" id="3yR-Df-HoW">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="3yR-Df-HoW" customClass="GZReplyCell">
+                                <rect key="frame" x="0.0" y="92" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3yR-Df-HoW" id="f0L-0Z-1NP">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0X9-er-IwI" userLabel="avatar">
+                                            <rect key="frame" x="8" y="2" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="WWG-6v-SzV"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="一天前" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xey-bN-qCE" userLabel="created_date">
+                                            <rect key="frame" x="487" y="16" width="105" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="105" id="XWk-M6-wVI"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@thanksdanny" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qE3-oq-1DI" userLabel="userName">
+                                            <rect key="frame" x="56" y="8" width="217" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="217" id="tgs-dV-uFT"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="0X9-er-IwI" secondAttribute="bottom" constant="29" id="38u-X6-bLh"/>
+                                        <constraint firstItem="0X9-er-IwI" firstAttribute="top" secondItem="f0L-0Z-1NP" secondAttribute="topMargin" constant="-6" id="5BG-5I-L5A"/>
+                                        <constraint firstItem="qE3-oq-1DI" firstAttribute="top" secondItem="f0L-0Z-1NP" secondAttribute="topMargin" id="8FO-ef-mfr"/>
+                                        <constraint firstItem="Xey-bN-qCE" firstAttribute="trailing" secondItem="f0L-0Z-1NP" secondAttribute="trailingMargin" id="MBT-oX-zcr"/>
+                                        <constraint firstItem="Xey-bN-qCE" firstAttribute="top" secondItem="f0L-0Z-1NP" secondAttribute="topMargin" constant="8" id="YSe-YY-LE3"/>
+                                        <constraint firstItem="0X9-er-IwI" firstAttribute="leading" secondItem="f0L-0Z-1NP" secondAttribute="leadingMargin" id="a7A-y1-E9k"/>
+                                        <constraint firstItem="qE3-oq-1DI" firstAttribute="leading" secondItem="0X9-er-IwI" secondAttribute="trailing" constant="8" symbolic="YES" id="vvx-jC-Fi9"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="avatar" destination="0X9-er-IwI" id="RGY-Kl-l2b"/>
+                                    <outlet property="createdDate" destination="Xey-bN-qCE" id="fLu-oE-uYF"/>
+                                    <outlet property="userName" destination="qE3-oq-1DI" id="Y1S-KY-PGP"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

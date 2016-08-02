@@ -13,7 +13,7 @@
 
 @interface GZHotModel : MTLModel <MTLJSONSerializing>
 
-@property (nonatomic, assign) NSUInteger id;
+@property (nonatomic, copy) NSString *id;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *url;
 @property (nonatomic, copy) NSString *content;

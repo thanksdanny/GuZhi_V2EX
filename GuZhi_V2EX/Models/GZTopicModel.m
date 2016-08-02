@@ -20,11 +20,11 @@
              @"topicContent"         : @"content",
              @"topicContentRendered" : @"content_render",
              @"topicReplyCount"      : @"replies",
+             @"topicCreator"         : @"member",
+             @"topicNode"            : @"node",
              @"topicCreated"         : @"created",
              @"topicModified"        : @"last_modified",
              @"topicTouched"         : @"last_touched",
-             @"topicCreator"         : @"member",
-             @"topicNode"            : @"node",
              };
 }
 

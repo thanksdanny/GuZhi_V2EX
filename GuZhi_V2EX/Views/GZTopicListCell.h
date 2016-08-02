@@ -11,6 +11,8 @@
 
 @interface GZTopicListCell : UITableViewCell
 
+
+
 @property (weak, nonatomic) IBOutlet UILabel *titleLable;
 
 @property (nonatomic, strong) GZHotModel *model;

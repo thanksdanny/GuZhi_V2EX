@@ -17,5 +17,13 @@
 @property (nonatomic, copy) NSString *memberAvatarNormal;
 @property (nonatomic, copy) NSString *memberAvatarLarge;
 
+
 @end
 
+@interface GZMemberList : NSObject
+
+@property (nonatomic, strong) NSArray *list;
+
+- (instancetype)initWithArray:(NSArray *)array;
+
+@end

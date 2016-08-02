@@ -197,6 +197,24 @@ typedef NS_ENUM(NSInteger, GZRequestMethod) {
                            }];
 }
 
+- (NSURLSessionDataTask *)getTopicListWithTopicId:(NSString *)topicId
+                                          success:(void (^)(GZTopicList *list))success
+                                          failure:(void (^)(NSError *error))failure {
+    NSDictionary *parameters;
+    if (topicId) {
+        parameters = @{@"id" : topicId};
+    }
+    return [self requestWithMethod:GZRequestMethodHTTPGET
+                         URLString:@"/api/topics/show.json"
+                        parameters:parameters
+                           success:^(NSURLSessionDataTask *task, id responseObject) {
+                               GZTopicList *list = [[GZTopicList alloc] initWithArray:responseObject];
+                               success(list);
+                           } failure:^(NSError *error) {
+                               failure(error);
+                           }];
+}
+
 // 请求详情评论
 - (NSURLSessionDataTask *)getRepliesWithTopicId:(NSString *)topicId
                                         success:(void (^)(GZReplyList *list))success

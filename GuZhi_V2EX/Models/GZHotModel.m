@@ -31,6 +31,7 @@
 
 + (NSValueTransformer *)memberJSONTransformer {
     return [MTLValueTransformer transformerUsingForwardBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
+//        NSError *error = nil;
         return [MTLJSONAdapter modelOfClass:[GZMemberModel class] fromJSONDictionary:value error:nil];
     }];
 }

@@ -11,6 +11,7 @@
 
 @class GZTopicModel;
 @class GZReplyList;
+@class GZTopicList;
 
 @interface GZDataManager : NSObject
 
@@ -29,6 +30,10 @@
 - (NSURLSessionDataTask *)getTopicWithTopicId:(NSString *)topicId
                                       success:(void (^)(GZTopicModel *model))success
                                       failure:(void (^)(NSError *error))failure;
+
+- (NSURLSessionDataTask *)getTopicListWithTopicId:(NSString *)topicId
+                                          success:(void (^)(GZTopicList *list))success
+                                          failure:(void (^)(NSError *error))failure;
 
 // 请求详情评论
 - (NSURLSessionDataTask *)getRepliesWithTopicId:(NSString *)topicId
