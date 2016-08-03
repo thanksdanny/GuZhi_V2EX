@@ -114,8 +114,8 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="UE2-Cj-PSf" id="47B-8r-VHT"/>
-                            <outlet property="delegate" destination="UE2-Cj-PSf" id="CV1-wj-0Sy"/>
+                            <outlet property="dataSource" destination="UE2-Cj-PSf" id="ewl-XE-yDx"/>
+                            <outlet property="delegate" destination="UE2-Cj-PSf" id="rOW-BC-hCJ"/>
                         </connections>
                     </tableView>
                     <connections>

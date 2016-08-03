@@ -36,7 +36,7 @@
  */
 
 
-// 主题回复 http://www.v2ex.com/api/replies/show.json?topic_id=296023
+// 主题回复 http://www.v2ex.com/api/replies/show.json?topic_id=296478
 // 主题详情 http://www.v2ex.com/api/topics/show.json?id=296023
 
 #import "GZDataManager.h"
@@ -167,11 +167,14 @@ typedef NS_ENUM(NSInteger, GZRequestMethod) {
 
 - (NSURLSessionDataTask *)getHotTopicsSuccess:(void (^)(GZHotList *list))succes
                                       failure:(void (^)(NSError *error))failure {
-    return [self requestWithMethod:GZRequestMethodJSONGET URLString:@"/api/topics/hot.json" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        
-        GZHotList *list = [[GZHotList alloc] initWithArray:responseObject];
-        succes(list);
-    } failure:^(NSError *error) {
+    return [self requestWithMethod:GZRequestMethodJSONGET
+                         URLString:@"/api/topics/hot.json"
+                        parameters:nil
+                           success:^(NSURLSessionDataTask *task, id responseObject) {
+                               GZHotList *list = [[GZHotList alloc] initWithArray:responseObject];
+                               succes(list);
+    }
+                           failure:^(NSError *error) {
         failure(error);
     }];
 }
@@ -188,6 +191,7 @@ typedef NS_ENUM(NSInteger, GZRequestMethod) {
                          URLString:@"/api/topics/show.json"
                         parameters:parameters
                            success:^(NSURLSessionDataTask *task, id responseObject) {
+                               NSLog(@"=========%@", responseObject);
                                NSError *error = nil;
                                GZTopicModel *model = [[GZTopicModel alloc] initWithDictionary:[responseObject firstObject] error:&error];
                                success(model);
@@ -202,7 +206,7 @@ typedef NS_ENUM(NSInteger, GZRequestMethod) {
                                           failure:(void (^)(NSError *error))failure {
     NSDictionary *parameters;
     if (topicId) {
-        parameters = @{@"id" : topicId};
+        parameters = @{@"topicId" : topicId};
     }
     return [self requestWithMethod:GZRequestMethodHTTPGET
                          URLString:@"/api/topics/show.json"
@@ -221,20 +225,21 @@ typedef NS_ENUM(NSInteger, GZRequestMethod) {
                                         failure:(void (^)(NSError *error))failure {
     NSDictionary *parameters;
     if (topicId) {
-        parameters = @{@"id" : topicId};
+        parameters = @{@"replyId" : topicId};
     }
     return [self requestWithMethod:GZRequestMethodJSONGET
                          URLString:@"/api/replies/show.json"
                         parameters:parameters
                            success:^(NSURLSessionDataTask *task, id responseObject) {
+                               NSLog(@"%@", responseObject);
                                GZReplyList *list = [[GZReplyList alloc] initWithArray:responseObject];
+                               NSLog(@"%@", responseObject);
                                success(list);
                            }
                            failure:^(NSError *error) {
                                failure(error);
                            }];
 }
-
 
 
 @end

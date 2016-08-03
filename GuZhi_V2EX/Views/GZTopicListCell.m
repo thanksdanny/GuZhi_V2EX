@@ -15,9 +15,10 @@
 
 @implementation GZTopicListCell
 
+// 貌似这方法没用 进不去用sb的话
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    
+    NSLog(@"haha");
     if (self) {
         self.clipsToBounds = YES;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -33,7 +34,7 @@
 
 // 手写界面的时候在这配置ui
 - (void)configureViews {
-
+    NSLog(@"heihei");
 }
 
 #pragma mark - Data Methods

@@ -73,9 +73,8 @@
 - (instancetype)initWithArray:(NSArray *)array {
     if (self = [super init]) {
         NSMutableArray *list = [[NSMutableArray alloc] init];
-        NSError *error = nil;
-        
         for (NSDictionary *dict in array) {
+            NSError *error = nil;
             GZHotModel *model = [[GZHotModel alloc] initWithDictionary:dict error:&error];
             [list addObject:model];
         }

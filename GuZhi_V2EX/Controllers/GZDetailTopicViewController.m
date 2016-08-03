@@ -39,7 +39,7 @@
 }
 
 // 回复
-@property (nonatomic, strong) NSArray *replayDataArray;
+@property (nonatomic, strong) GZReplyList *replayDataList;
 
 @end
 
@@ -120,7 +120,7 @@
     
     // 获取主题详情数据
 //    NSLog(@"%@", self.info.member);
-//    
+//    NSLog(@"主题详情请求开始");
 //    [[GZDataManager shareManager] getTopicWithTopicId:self.info.id success:^(GZTopicModel *model) {
 //        NSLog(@"%@", model);
 //    } failure:^(NSError *error) {
@@ -139,16 +139,17 @@
     
      
     // 获取回复详情数据
+    NSLog(@"请求回复开始");
     [[GZDataManager shareManager] getRepliesWithTopicId:self.info.id success:^(GZReplyList *list) {
-        self.replayDataArray = list.list;
-        
-        
+        self.replayDataList = list;
+        NSLog(@"%@", self.replayDataList.list);
+
         [detailTable reloadData];
         
     } failure:^(NSError *error) {
         NSLog(@"%@", error);
     }];
-    
+    NSLog(@"请求回复结束");
 }
 
 - (void)initTable {
@@ -177,16 +178,19 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return self.replayDataArray.count;
+    return self.replayDataList.list.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    GZReplyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    NSLog(@"detail tableviewcell");
+    GZReplyCell *replaycell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    if (!replaycell) {
+        replaycell= [[GZReplyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    }
     
-    GZReplyModel *replayObject = self.replayDataArray[indexPath.row];
+    GZReplyModel *replayObject = self.replayDataList.list[indexPath.row];
     UIFont *countFont = [UIFont systemFontOfSize:14];
-    CGSize countSize = [[self.replayDataArray objectAtIndex:indexPath.row] boundingRectWithSize:CGSizeMake(cellContentWith, 10000)
+    CGSize countSize = [[self.replayDataList.list objectAtIndex:indexPath.row] boundingRectWithSize:CGSizeMake(cellContentWith, 10000)
                                                                                         options:NSStringDrawingUsesLineFragmentOrigin
                                                                                      attributes:@{NSFontAttributeName: countFont}
                                                                                         context:nil].size;
@@ -194,8 +198,8 @@
     contentLabel.font = [UIFont systemFontOfSize:14];
     contentLabel.text = replayObject.replyContent;
     contentLabel.numberOfLines = 0;
-    contentLabel.textColor = [UIColor colorWithRed:90.0/255.0 green:90.0/255.0 blue:90.0/255.0 alpha:1];
-    [cell.contentView addSubview:contentLabel];
+    contentLabel.textColor = [UIColor greenColor];
+    [replaycell.contentView addSubview:contentLabel];
     
     // 头像
 //    cell.avatar.layer.cornerRadius = 3;
@@ -203,13 +207,13 @@
 //    [cell.avatar sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@", replay.memberAvatarMini]] placeholderImage:[UIImage imageNamed:@"avatar_plasehoder"];
     
     
-    return [self configureTopicCellWithCell:cell IndexPath:indexPath];
+    return [self configureTopicCellWithCell:replaycell IndexPath:indexPath];
 }
 
 #pragma mark - Configure TableCell
 
 - (GZReplyCell *)configureTopicCellWithCell:(GZReplyCell *)cell IndexPath:(NSIndexPath *)indexpath {
-    GZReplyModel *model = self.replayDataArray[indexpath.row];
+    GZReplyModel *model = self.replayDataList.list[indexpath.row];
     
     cell.model = model;
     

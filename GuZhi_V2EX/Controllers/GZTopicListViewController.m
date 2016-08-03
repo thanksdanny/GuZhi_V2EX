@@ -112,9 +112,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"hot table view");
     GZTopicListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    //    cell.titleLable.text = self.hotTitle[indexPath.row];
-//    cell.titleLable.text = @"今晚究竟吃d咩啊";
     
     return [self configureTopicCellWithCell:cell IndexPath:indexPath];
 }

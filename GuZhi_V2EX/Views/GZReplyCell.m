@@ -30,7 +30,7 @@
 #pragma mark - configureViews
 
 - (void)configureViews {
-    
+    NSLog(@"detail heihei");
 }
 
 #pragma mark - Data Methods
