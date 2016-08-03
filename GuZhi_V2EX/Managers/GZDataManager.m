@@ -206,7 +206,7 @@ typedef NS_ENUM(NSInteger, GZRequestMethod) {
                                           failure:(void (^)(NSError *error))failure {
     NSDictionary *parameters;
     if (topicId) {
-        parameters = @{@"topicId" : topicId};
+        parameters = @{@"id" : topicId};
     }
     return [self requestWithMethod:GZRequestMethodHTTPGET
                          URLString:@"/api/topics/show.json"
@@ -225,7 +225,7 @@ typedef NS_ENUM(NSInteger, GZRequestMethod) {
                                         failure:(void (^)(NSError *error))failure {
     NSDictionary *parameters;
     if (topicId) {
-        parameters = @{@"replyId" : topicId};
+        parameters = @{@"topic_id" : topicId};
     }
     return [self requestWithMethod:GZRequestMethodJSONGET
                          URLString:@"/api/replies/show.json"
