@@ -121,7 +121,7 @@
     // 获取主题详情数据
     NSLog(@"主题详情请求开始");
     [[GZDataManager shareManager] getTopicWithTopicId:self.info.id success:^(GZTopicModel *model) {
-        NSLog(@"%@", model);
+        NSLog(@"shabi");
     } failure:^(NSError *error) {
         NSLog(@"%@", error);
     }];
@@ -181,15 +181,15 @@
         replaycell= [[GZReplyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
     
-    GZReplyModel *replayObject = self.replayDataList.list[indexPath.row];
+    GZReplyModel *replyObject = self.replayDataList.list[indexPath.row];
     UIFont *countFont = [UIFont systemFontOfSize:14];
-    CGSize countSize = [[self.replayDataList.list objectAtIndex:indexPath.row] boundingRectWithSize:CGSizeMake(cellContentWith, 10000)
+    CGSize countSize = [replyObject.content boundingRectWithSize:CGSizeMake(cellContentWith, 10000)
                                                                                         options:NSStringDrawingUsesLineFragmentOrigin
                                                                                      attributes:@{NSFontAttributeName: countFont}
                                                                                         context:nil].size;
     UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(58, 40, cellContentWith - 8, countSize.height)];
     contentLabel.font = [UIFont systemFontOfSize:14];
-    contentLabel.text = replayObject.content;
+    contentLabel.text = replyObject.content;
     contentLabel.numberOfLines = 0;
     contentLabel.textColor = [UIColor greenColor];
     [replaycell.contentView addSubview:contentLabel];

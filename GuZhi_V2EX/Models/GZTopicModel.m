@@ -18,7 +18,7 @@
              @"title"           : @"title",
              @"url"             : @"url",
              @"content"         : @"content",
-             @"content_render" : @"content_render",
+             @"content_rendered" : @"content_rendered",
              @"replies"      : @"replies",
              @"member"         : @"member",
              @"node"            : @"node",

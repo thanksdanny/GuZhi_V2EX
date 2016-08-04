@@ -17,7 +17,7 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *url;
 @property (nonatomic, copy) NSString *content;
-@property (nonatomic, copy) NSString *content_render;
+@property (nonatomic, copy) NSString *content_rendered;
 @property (nonatomic, copy) NSString *replies;
 @property (nonatomic, copy) NSNumber *created;
 @property (nonatomic, copy) NSString *last_modified;
