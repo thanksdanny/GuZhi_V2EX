@@ -10,12 +10,12 @@
 
 @interface GZMemberModel : MTLModel <MTLJSONSerializing>
 
-@property (nonatomic, copy) NSString *memberId;
-@property (nonatomic, copy) NSString *memberName;
-@property (nonatomic, copy) NSString *memberTagline;
-@property (nonatomic, copy) NSString *memberAvatarMini;
-@property (nonatomic, copy) NSString *memberAvatarNormal;
-@property (nonatomic, copy) NSString *memberAvatarLarge;
+@property (nonatomic, copy) NSString *id;
+@property (nonatomic, copy) NSString *username;
+@property (nonatomic, copy) NSString *tagline;
+@property (nonatomic, copy) NSString *avatar_mini;
+@property (nonatomic, copy) NSString *avatar_normal;
+@property (nonatomic, copy) NSString *avatar_large;
 
 
 @end

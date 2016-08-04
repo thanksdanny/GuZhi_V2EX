@@ -119,23 +119,16 @@
     
     
     // 获取主题详情数据
-//    NSLog(@"%@", self.info.member);
-//    NSLog(@"主题详情请求开始");
-//    [[GZDataManager shareManager] getTopicWithTopicId:self.info.id success:^(GZTopicModel *model) {
-//        NSLog(@"%@", model);
-//    } failure:^(NSError *error) {
-//        NSLog(@"%@", error);
-//    }];
-//    
-//    NSLog(@"结束");
+    NSLog(@"主题详情请求开始");
+    [[GZDataManager shareManager] getTopicWithTopicId:self.info.id success:^(GZTopicModel *model) {
+        NSLog(@"%@", model);
+    } failure:^(NSError *error) {
+        NSLog(@"%@", error);
+    }];
     
-//    NSLog(@"开始");
-//    [[GZDataManager shareManager] getTopicListWithTopicId:self.info.id success:^(GZTopicList *list) {
-//        NSLog(@"%@", list);
-//    } failure:^(NSError *error) {
-//        NSLog(@"%@", error);
-//    }];
-//    NSLog(@"结束");
+    NSLog(@"结束");
+    
+
     
      
     // 获取回复详情数据
@@ -196,7 +189,7 @@
                                                                                         context:nil].size;
     UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(58, 40, cellContentWith - 8, countSize.height)];
     contentLabel.font = [UIFont systemFontOfSize:14];
-    contentLabel.text = replayObject.replyContent;
+    contentLabel.text = replayObject.content;
     contentLabel.numberOfLines = 0;
     contentLabel.textColor = [UIColor greenColor];
     [replaycell.contentView addSubview:contentLabel];

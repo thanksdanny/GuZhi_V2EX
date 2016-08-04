@@ -14,17 +14,17 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
-             @"topicId"              : @"id",
-             @"topicTitle"           : @"title",
-             @"topicUrl"             : @"url",
-             @"topicContent"         : @"content",
-             @"topicContentRendered" : @"content_render",
-             @"topicReplyCount"      : @"replies",
-             @"topicCreator"         : @"member",
-             @"topicNode"            : @"node",
-             @"topicCreated"         : @"created",
-             @"topicModified"        : @"last_modified",
-             @"topicTouched"         : @"last_touched",
+             @"id"              : @"id",
+             @"title"           : @"title",
+             @"url"             : @"url",
+             @"content"         : @"content",
+             @"content_render" : @"content_render",
+             @"replies"      : @"replies",
+             @"member"         : @"member",
+             @"node"            : @"node",
+             @"created"         : @"created",
+             @"last_modified"        : @"last_modified",
+             @"last_touched"         : @"last_touched",
              };
 }
 

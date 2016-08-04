@@ -13,13 +13,13 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
-             @"replyId"              : @"id",
-             @"replyThanksCount"     : @"thanks",
-             @"replyContent"         : @"content",
-             @"replyContentRendered" : @"content_rendered",
-             @"replyCreator"         : @"member",
-             @"replyCreated"         : @"created",
-             @"replyModified"        : @"last_modified",
+             @"id"               : @"id",
+             @"thanks"           : @"thanks",
+             @"content"          : @"content",
+             @"content_rendered" : @"content_rendered",
+             @"member"           : @"member",
+             @"created"          : @"created",
+             @"last_modified"    : @"last_modified",
              };
 }
 

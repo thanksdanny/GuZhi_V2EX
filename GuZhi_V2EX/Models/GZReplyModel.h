@@ -12,13 +12,13 @@
 
 @interface GZReplyModel : MTLModel <MTLJSONSerializing>
 
-@property (nonatomic, copy  ) NSString      *replyId;
-@property (nonatomic, copy  ) NSString      *replyThanksCount;
-@property (nonatomic, copy  ) NSString      *replyContent;
-@property (nonatomic, copy  ) NSString      *replyContentRendered;
-@property (nonatomic, strong) GZMemberModel *replyCreator;
-@property (nonatomic, strong) NSNumber      *replyCreated;
-@property (nonatomic, copy  ) NSString      *replyModified;
+@property (nonatomic, copy  ) NSString      *id;
+@property (nonatomic, copy  ) NSString      *thanks;
+@property (nonatomic, copy  ) NSString      *content;
+@property (nonatomic, copy  ) NSString      *content_rendered;
+@property (nonatomic, strong) GZMemberModel *member;
+@property (nonatomic, strong) NSNumber      *created;
+@property (nonatomic, copy  ) NSString      *last_modified;
 
 @end
 

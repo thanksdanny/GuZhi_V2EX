@@ -36,7 +36,7 @@
 #pragma mark - Data Methods
 
 - (void)setModel:(GZReplyModel *)model {
-    self.userName.text = model.replyCreator.memberName;
+    self.userName.text = model.member.memberName;
     
 }
 

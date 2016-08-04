@@ -13,18 +13,18 @@
 
 @interface GZTopicModel : MTLModel <MTLJSONSerializing>
 
-@property (nonatomic, copy) NSString *topicId;
-@property (nonatomic, copy) NSString *topicTitle;
-@property (nonatomic, copy) NSString *topicUrl;
-@property (nonatomic, copy) NSString *topicContent;
-@property (nonatomic, copy) NSString *topicContentRendered;
-@property (nonatomic, copy) NSString *topicReplyCount;
-@property (nonatomic, copy) NSNumber *topicCreated;
-@property (nonatomic, copy) NSString *topicModified;
-@property (nonatomic, copy) NSString *topicTouched;
+@property (nonatomic, copy) NSString *id;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *url;
+@property (nonatomic, copy) NSString *content;
+@property (nonatomic, copy) NSString *content_render;
+@property (nonatomic, copy) NSString *replies;
+@property (nonatomic, copy) NSNumber *created;
+@property (nonatomic, copy) NSString *last_modified;
+@property (nonatomic, copy) NSString *last_touched;
 
-@property (nonatomic, strong) GZMemberModel *topicCreator;
-@property (nonatomic, strong) GZNodeModel   *topicNode;
+@property (nonatomic, strong) GZMemberModel *member;
+@property (nonatomic, strong) GZNodeModel   *node;
 
 @end
 
