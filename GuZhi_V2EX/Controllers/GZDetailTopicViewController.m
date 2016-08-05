@@ -89,19 +89,20 @@
     [headerView addSubview:uTag];
     
     // 楼主label
-//    userName = [[UILabel alloc] init];
-//    UIFont *nameFont = [UIFont boldSystemFontOfSize:12];
-//    // 下面在这行报错 member为空
-//    CGSize nameSize = [self.info.member.memberName boundingRectWithSize:CGSizeMake(100, 20)
-//                                                                options:NSStringDrawingUsesLineFragmentOrigin
-//                                                             attributes:@{NSFontAttributeName:nameFont}
-//                                                                context:nil].size;
-//    userName.font = nameFont;
-//    userName.numberOfLines = 0;
-//    userName.textColor = [UIColor colorWithRed:90.0/255.0 green:90.0/255.0 blue:90.0/255.0 alpha:1];
-//    userName.frame = CGRectMake(28, uTag.frame.origin.y, nameSize.width, 20);
-//    userName.text = self.info.member.memberName;
-//    [headerView addSubview:userName];
+    userName = [[UILabel alloc] init];
+    UIFont *nameFont = [UIFont boldSystemFontOfSize:12];
+    // 下面在这行报错 member为空
+    NSString *usernameStr = [self.info.member valueForKey:@"username"];
+    CGSize nameSize = [usernameStr boundingRectWithSize:CGSizeMake(100, 20)
+                                                                options:NSStringDrawingUsesLineFragmentOrigin
+                                                             attributes:@{NSFontAttributeName:nameFont}
+                                                                context:nil].size;
+    userName.font = nameFont;
+    userName.numberOfLines = 0;
+    userName.textColor = [UIColor colorWithRed:90.0/255.0 green:90.0/255.0 blue:90.0/255.0 alpha:1];
+    userName.frame = CGRectMake(28, uTag.frame.origin.y, nameSize.width, 20);
+    userName.text = usernameStr;
+    [headerView addSubview:userName];
     
     // 底部线条
     bottomLine = [[UILabel alloc] init];

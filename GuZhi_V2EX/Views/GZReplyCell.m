@@ -36,7 +36,10 @@
 #pragma mark - Data Methods
 
 - (void)setModel:(GZReplyModel *)model {
-    self.userName.text = model.member.username;
+    _model = model;
+    
+    NSLog(@"%@", [model.member valueForKey:@"username"]);
+    self.userName.text = [model.member valueForKey:@"username"];//model.member.username;
     
 }
 
