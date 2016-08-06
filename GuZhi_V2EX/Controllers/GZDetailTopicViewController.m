@@ -62,7 +62,6 @@
                                              attributes:@{NSFontAttributeName:dataFont}
                                                 context:nil].size;
     
-    
     // 标题lable
     title = [[UILabel alloc] init];
     title.textColor = [UIColor blueColor];
@@ -73,12 +72,14 @@
     [headerView addSubview:title];
     
     // 头像
-//    userAvatar = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds) - 38, 8, 30, 30)];
-//    userAvatar.backgroundColor = [UIColor clearColor];
-//    userAvatar.layer.cornerRadius = 3;
-//    userAvatar.layer.masksToBounds = YES;
-//    [userAvatar sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@", self.info.member.memberAvatarMini]] placeholderImage:[UIImage imageNamed:@"avatar_placsehoder"]];
-//    [headerView addSubview:userAvatar];
+    userAvatar = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds) - 38, 8, 30, 30)];
+    userAvatar.backgroundColor = [UIColor blackColor];
+    userAvatar.layer.cornerRadius = 3;
+    userAvatar.layer.masksToBounds = YES;
+    NSLog(@"http:%@", [self.info.member valueForKey:@"avatar_mini"]);
+    [userAvatar sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@", [self.info.member valueForKey:@"avatar_mini"]]]
+                  placeholderImage:[UIImage imageNamed:@"avatar_placsehoder"]];
+    [headerView addSubview:userAvatar];
    
     // tag lable
     CGFloat uTagx = title.frame.size.height<17?title.frame.size.height+30:title.frame.size.height+13;
