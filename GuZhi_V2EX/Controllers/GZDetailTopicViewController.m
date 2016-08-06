@@ -11,7 +11,9 @@
 #import "GZHotModel.h"
 #import "GZReplyModel.h"
 #import "GZMemberModel.h"
+#import "GZTopicModel.h"
 #import "GZReplyCell.h"
+
 
 #import "UIImageView+WebCache.h"
 
@@ -33,7 +35,6 @@
     // 内容
     NSString     *content;
     UITextView   *articleLabel;
-    
     
     CGFloat      cellContentWith;
 }
@@ -123,7 +124,21 @@
     // 获取主题详情数据
     NSLog(@"主题详情请求开始");
     [[GZDataManager shareManager] getTopicWithTopicId:self.info.id success:^(GZTopicModel *model) {
-        NSLog(@"shabi");
+        NSLog(@"成功读取主题详情");
+        content = model.content;
+        
+        UIFont *countFont = [UIFont systemFontOfSize:14];
+        CGSize countSize = [content boundingRectWithSize:CGSizeMake(CGRectGetWidth([UIScreen mainScreen].bounds) - 16, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:countFont} context:nil].size;
+        articleLabel.font = countFont;
+        articleLabel.editable = NO;
+        articleLabel.scrollEnabled = NO;
+        articleLabel.textColor = [UIColor grayColor];
+        articleLabel.frame = CGRectMake(8, userName.frame.origin.y+33, CGRectGetWidth([UIScreen mainScreen].bounds) - 16, countSize.height + 40);
+        articleLabel.text = content;
+        headerView.frame = CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), articleLabel.frame.origin.y + articleLabel.frame.size.height);
+        
+        
+        [detailTable reloadData];
     } failure:^(NSError *error) {
         NSLog(@"%@", error);
     }];
