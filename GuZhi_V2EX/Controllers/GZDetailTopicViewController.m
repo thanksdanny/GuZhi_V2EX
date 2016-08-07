@@ -211,10 +211,7 @@
     contentLabel.textColor = [UIColor greenColor];
     [replaycell.contentView addSubview:contentLabel];
     
-    // 头像
-    replaycell.avatar.layer.cornerRadius = 3;
-    replaycell.avatar.layer.masksToBounds = YES;
-    [replaycell.avatar sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@", [replyObject.member valueForKey:@"avatar_mini"]]] placeholderImage:[UIImage imageNamed:@"avatar_plasehoder"]];
+    
     
     return [self configureTopicCellWithCell:replaycell IndexPath:indexPath];
 }

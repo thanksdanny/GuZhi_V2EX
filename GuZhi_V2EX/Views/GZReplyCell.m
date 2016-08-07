@@ -9,6 +9,8 @@
 #import "GZReplyCell.h"
 #import "GZMemberModel.h"
 
+#import "UIImageView+WebCache.h"
+
 @interface GZReplyCell ()
 
 @end
@@ -39,7 +41,12 @@
     _model = model;
     
     NSLog(@"%@", [model.member valueForKey:@"username"]);
-    self.userName.text = [model.member valueForKey:@"username"];//model.member.username;
+    self.userName.text = [model.member valueForKey:@"username"];
+    
+    // 头像
+    self.avatar.layer.cornerRadius = 3;
+    self.avatar.layer.masksToBounds = YES;
+    [self.avatar sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://%@", [_model.member valueForKey:@"avatar_mini"]]] placeholderImage:[UIImage imageNamed:@"avatar_plasehoder"]];
     
 }
 
