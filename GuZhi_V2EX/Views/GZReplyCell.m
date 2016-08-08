@@ -46,7 +46,7 @@
     // 头像
     self.avatar.layer.cornerRadius = 3;
     self.avatar.layer.masksToBounds = YES;
-    [self.avatar sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://%@", [_model.member valueForKey:@"avatar_mini"]]] placeholderImage:[UIImage imageNamed:@"avatar_plasehoder"]];
+    [self.avatar sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://%@", [_model.member valueForKey:@"avatar_mini"]]] placeholderImage:[UIImage imageNamed:@"avatar_plasehoder"]];
     
 }
 

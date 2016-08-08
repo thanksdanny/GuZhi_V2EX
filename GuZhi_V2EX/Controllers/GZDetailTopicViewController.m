@@ -97,9 +97,9 @@
     userAvatar.backgroundColor = [UIColor blackColor];
     userAvatar.layer.cornerRadius = 3;
     userAvatar.layer.masksToBounds = YES;
-    NSLog(@"http:%@", [self.info.member valueForKey:@"avatar_mini"]);
-    [userAvatar sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@", [self.info.member valueForKey:@"avatar_mini"]]]
+    [userAvatar sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https:%@", [self.info.member valueForKey:@"avatar_mini"]]]
                   placeholderImage:[UIImage imageNamed:@"avatar_placsehoder"]];
+
     [headerView addSubview:userAvatar];
     
     // tag lable
