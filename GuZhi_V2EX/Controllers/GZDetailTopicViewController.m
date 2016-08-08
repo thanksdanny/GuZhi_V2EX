@@ -225,7 +225,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"detail tableviewcell");
     GZReplyCell *replaycell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     if (!replaycell) {
         replaycell= [[GZReplyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
