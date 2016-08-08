@@ -37,12 +37,11 @@
     NSString     *content;
     UITextView   *articleLabel;
     
-    NSArray      *replyDataArray;
     CGFloat      cellContentWidth;
 }
 
 // 回复
-@property (nonatomic, strong) GZReplyList *replayDataList;
+@property (nonatomic, strong) GZReplyList *replyDataList;
 
 @end
 
@@ -53,8 +52,8 @@
     
     [self configureUI];
     [self initTable];
-    [self getTopicData];
     [self getReplyData];
+    [self getTopicData];
     
 }
 
@@ -194,11 +193,8 @@
     // 获取回复详情数据
     NSLog(@"请求回复开始");
     [[GZDataManager shareManager] getRepliesWithTopicId:self.info.id success:^(GZReplyList *list) {
-        self.replayDataList = list;
-        NSLog(@"%@", self.replayDataList.list);
-        
+        self.replyDataList = list;
         [detailTable reloadData];
-        
     } failure:^(NSError *error) {
         NSLog(@"%@", error);
     }];
@@ -207,7 +203,7 @@
 #pragma mark - Table view data source
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    GZReplyModel *obj = [replyDataArray objectAtIndex:indexPath.row];
+    GZReplyModel *obj = [self.replyDataList.list objectAtIndex:indexPath.row];
     UIFont *countFont = [UIFont systemFontOfSize:14];
     CGSize countSize = [obj.content boundingRectWithSize:CGSizeMake(cellContentWidth, 10000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:countFont} context:nil].size;
     
@@ -225,7 +221,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.replayDataList.list.count;
+    return self.replyDataList.list.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -235,7 +231,7 @@
         replaycell= [[GZReplyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
     
-    GZReplyModel *replyObject = self.replayDataList.list[indexPath.row];
+    GZReplyModel *replyObject = self.replyDataList.list[indexPath.row];
     UIFont *countFont = [UIFont systemFontOfSize:14];
     CGSize countSize = [replyObject.content boundingRectWithSize:CGSizeMake(cellContentWidth, 10000)
                                                                                         options:NSStringDrawingUsesLineFragmentOrigin
@@ -245,7 +241,7 @@
     contentLabel.font = [UIFont systemFontOfSize:14];
     contentLabel.text = replyObject.content;
     contentLabel.numberOfLines = 0;
-    contentLabel.textColor = [UIColor greenColor];
+    contentLabel.textColor = [UIColor colorWithRed:90.0/255.0 green:90.0/255.0 blue:90.0/255.0 alpha:1];
     [replaycell.contentView addSubview:contentLabel];
     
     
@@ -256,7 +252,7 @@
 #pragma mark - Configure TableCell
 
 - (GZReplyCell *)configureTopicCellWithCell:(GZReplyCell *)cell IndexPath:(NSIndexPath *)indexpath {
-    GZReplyModel *model = self.replayDataList.list[indexpath.row];
+    GZReplyModel *model = self.replyDataList.list[indexpath.row];
     
     cell.model = model;
     
