@@ -39,14 +39,13 @@
 
 - (void)setModel:(GZReplyModel *)model {
     _model = model;
-    
-    NSLog(@"%@", [model.member valueForKey:@"username"]);
+    NSLog(@"cell--进入setModel方法");
     self.userName.text = [model.member valueForKey:@"username"];
     
     // 头像
     self.avatar.layer.cornerRadius = 3;
     self.avatar.layer.masksToBounds = YES;
-    [self.avatar sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://%@", [_model.member valueForKey:@"avatar_mini"]]] placeholderImage:[UIImage imageNamed:@"avatar_plasehoder"]];
+    [self.avatar sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https:%@", [_model.member valueForKey:@"avatar_mini"]]] placeholderImage:[UIImage imageNamed:@"avatar_plasehoder"]];
     
 }
 
