@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'CD8AFBAA8E2A708CF38B9440B123C708'
-               BlueprintName = 'Pods-GuZhi_V2EX'
+               BlueprintIdentifier = '53480ED0BE09FF49E34B1702D485CAAB'
+               BlueprintName = 'Masonry'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-GuZhi_V2EX.a'>
+               BuildableName = 'libMasonry.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

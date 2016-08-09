@@ -98,7 +98,7 @@
     userAvatar.layer.cornerRadius = 3;
     userAvatar.layer.masksToBounds = YES;
     [userAvatar sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https:%@", [self.info.member valueForKey:@"avatar_mini"]]]
-                  placeholderImage:[UIImage imageNamed:@"avatar_placsehoder"]];
+                  placeholderImage:[UIImage imageNamed:@"avatar_plasehoder"]];
 
     [headerView addSubview:userAvatar];
     
