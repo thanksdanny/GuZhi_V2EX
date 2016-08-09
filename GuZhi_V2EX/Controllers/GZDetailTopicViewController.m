@@ -29,7 +29,7 @@
     UILabel      *title;
     UIImageView  *userAvatar;
     UILabel      *userName;
-    UILabel      *replaceCount;
+    UILabel      *replyCount;
     UILabel      *nodeName;
     UILabel      *timeLabel;
     UILabel      *bottomLine;
@@ -127,10 +127,18 @@
     [headerView addSubview:userName];
     
     
-#warning 回复数往后再加
-    replaceCount = [[UILabel alloc] init];
-    UIFont *countFont = [UIFont systemFontOfSize:13];
+    // 回复数
     
+    replyCount = [[UILabel alloc] init];
+    UIFont *countFont = [UIFont systemFontOfSize:13];
+    NSString *replyCountStr = [NSString stringWithFormat:@"%@ 回复", self.info.replies];
+    CGSize countSize = [replyCountStr boundingRectWithSize:CGSizeMake(100, 20) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:countFont} context:nil].size;
+    replyCount.font = countFont;
+    replyCount.numberOfLines = 0;
+    replyCount.textColor = [UIColor grayColor];
+    replyCount.frame = CGRectMake(userName.frame.origin.x + userName.frame.size.width + 8, uTag.frame.origin.y, countSize.width, 20);
+    replyCount.text = replyCountStr;
+    [headerView addSubview:replyCount];
     
     // node节点
     nodeName = [[UILabel alloc] init];
@@ -144,7 +152,7 @@
     nodeName.textAlignment = NSTextAlignmentCenter;
     nodeName.layer.cornerRadius = 3;
     nodeName.layer.masksToBounds = YES;
-    nodeName.frame = CGRectMake(replaceCount.frame.origin.x+replaceCount.frame.size.width+8, uTag.frame.origin.y, nodeSize.width+4, 20);
+    nodeName.frame = CGRectMake(replyCount.frame.origin.x+replyCount.frame.size.width+8, uTag.frame.origin.y, nodeSize.width+4, 20);
     nodeName.text = nodeNameStr;
     [headerView addSubview:nodeName];
     
