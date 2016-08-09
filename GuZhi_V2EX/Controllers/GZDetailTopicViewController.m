@@ -14,6 +14,7 @@
 #import "GZTopicModel.h"
 #import "GZNodeModel.h"
 #import "GZReplyCell.h"
+#import "GZHelper.h"
 
 
 #import "UIImageView+WebCache.h"
@@ -163,7 +164,7 @@
 }
 
 - (void)getTopicData {
-    // 获取主题详情数据 r
+    // 获取主题详情数据
     NSLog(@"主题详情请求开始");
     [[GZDataManager shareManager] getTopicWithTopicId:self.info.id success:^(GZTopicModel *model) {
         NSLog(@"成功读取主题详情");
@@ -179,6 +180,16 @@
         articleLabel.text = content;
         headerView.frame = CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), articleLabel.frame.origin.y + articleLabel.frame.size.height);
         
+        // 时间戳
+        NSString *createdTimeStr = [GZHelper timeRemainDescriptionWithDateSP:self.info.created];
+        UIFont *timeFont = [UIFont systemFontOfSize:13];
+        CGSize timeSize = [createdTimeStr boundingRectWithSize:CGSizeMake(350, 20) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:timeFont} context:nil].size;
+        timeLabel.font = timeFont;
+        timeLabel.numberOfLines = 0;
+        timeLabel.textColor = [UIColor colorWithRed:90.0/255.0 green:90.0/255.0 blue:90.0/255.0 alpha:1];
+        timeLabel.frame = CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds)-timeSize.width-8, nodeName.frame.origin.y, timeSize.width, 20);
+        timeLabel.text = createdTimeStr;
+        [headerView addSubview:timeLabel];
         
         [detailTable reloadData];
     } failure:^(NSError *error) {
