@@ -156,8 +156,7 @@
     nodeName.text = nodeNameStr;
     [headerView addSubview:nodeName];
     
-    
-#warning 时间戳
+    // 时间戳
     timeLabel = [[UILabel alloc] init];
     
     // 底部线条
