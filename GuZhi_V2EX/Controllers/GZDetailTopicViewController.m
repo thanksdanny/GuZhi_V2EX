@@ -244,27 +244,30 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    GZReplyCell *replaycell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    if (!replaycell) {
-        replaycell= [[GZReplyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
-    }
+    GZReplyCell *replyCell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+//    代码写cell才这样初始化
+//    if (!replyCell) {
+//        replyCell= [[GZReplyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+//    }
     
-    GZReplyModel *replyObject = self.replyDataList.list[indexPath.row];
-    UIFont *countFont = [UIFont systemFontOfSize:14];
-    CGSize countSize = [replyObject.content boundingRectWithSize:CGSizeMake(cellContentWidth, 10000)
-                                                                                        options:NSStringDrawingUsesLineFragmentOrigin
-                                                                                     attributes:@{NSFontAttributeName: countFont}
-                                                                                        context:nil].size;
-    UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(58, 40, cellContentWidth - 8, countSize.height)];
-    contentLabel.font = [UIFont systemFontOfSize:14];
-    contentLabel.text = replyObject.content;
-    contentLabel.numberOfLines = 0;
-    contentLabel.textColor = [UIColor colorWithRed:90.0/255.0 green:90.0/255.0 blue:90.0/255.0 alpha:1];
-    [replaycell.contentView addSubview:contentLabel];
+//    GZReplyModel *replyObject = self.replyDataList.list[indexPath.row];
+//    UIFont *countFont = [UIFont systemFontOfSize:14];
+//    CGSize countSize = [replyObject.content boundingRectWithSize:CGSizeMake(cellContentWidth, 10000)
+//                                                         options:NSStringDrawingUsesLineFragmentOrigin
+//                                                      attributes:@{NSFontAttributeName: countFont}
+//                                                         context:nil].size;
+//    UILabel *replyContentLabel = [[UILabel alloc] initWithFrame:CGRectMake(58, 40, cellContentWidth - 8, countSize.height)];
+//    replyContentLabel.font = [UIFont systemFontOfSize:14];
+//    replyContentLabel.text = replyObject.content;
+//    replyContentLabel.numberOfLines = 0;
+//    replyContentLabel.backgroundColor =[UIColor blackColor];
+//    replyContentLabel.textColor = [UIColor colorWithRed:90.0/255.0 green:90.0/255.0 blue:90.0/255.0 alpha:1];
+//    [replyCell.contentView addSubview:replyContentLabel];
+    
+
     
     
-    
-    return [self configureTopicCellWithCell:replaycell IndexPath:indexPath];
+    return [self configureTopicCellWithCell:replyCell IndexPath:indexPath];
 }
 
 #pragma mark - Configure TableCell
