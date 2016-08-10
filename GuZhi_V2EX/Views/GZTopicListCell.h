@@ -11,9 +11,12 @@
 
 @interface GZTopicListCell : UITableViewCell
 
-
-
 @property (weak, nonatomic) IBOutlet UILabel *titleLable;
+@property (weak, nonatomic) IBOutlet UILabel *userName;
+@property (weak, nonatomic) IBOutlet UILabel *createdAndReply;
+@property (weak, nonatomic) IBOutlet UIImageView *avatar;
+@property (weak, nonatomic) IBOutlet UILabel *nodeLabel;
+
 
 @property (nonatomic, strong) GZHotModel *model;
 
