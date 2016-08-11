@@ -99,7 +99,7 @@
     userAvatar.layer.cornerRadius = 3;
     userAvatar.layer.masksToBounds = YES;
     [userAvatar sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https:%@", [self.info.member valueForKey:@"avatar_mini"]]]
-                  placeholderImage:[UIImage imageNamed:@"avatar_plasehoder"]];
+                  placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
 
     [headerView addSubview:userAvatar];
     
@@ -243,28 +243,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    GZReplyCell *replyCell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-//    代码写cell才这样初始化
-//    if (!replyCell) {
-//        replyCell= [[GZReplyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
-//    }
-    
-//    GZReplyModel *replyObject = self.replyDataList.list[indexPath.row];
-//    UIFont *countFont = [UIFont systemFontOfSize:14];
-//    CGSize countSize = [replyObject.content boundingRectWithSize:CGSizeMake(cellContentWidth, 10000)
-//                                                         options:NSStringDrawingUsesLineFragmentOrigin
-//                                                      attributes:@{NSFontAttributeName: countFont}
-//                                                         context:nil].size;
-//    UILabel *replyContentLabel = [[UILabel alloc] initWithFrame:CGRectMake(58, 40, cellContentWidth - 8, countSize.height)];
-//    replyContentLabel.font = [UIFont systemFontOfSize:14];
-//    replyContentLabel.text = replyObject.content;
-//    replyContentLabel.numberOfLines = 0;
-//    replyContentLabel.backgroundColor =[UIColor blackColor];
-//    replyContentLabel.textColor = [UIColor colorWithRed:90.0/255.0 green:90.0/255.0 blue:90.0/255.0 alpha:1];
-//    [replyCell.contentView addSubview:replyContentLabel];
-    
-
-    
+    GZReplyCell *replyCell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];    
     
     return [self configureTopicCellWithCell:replyCell IndexPath:indexPath];
 }

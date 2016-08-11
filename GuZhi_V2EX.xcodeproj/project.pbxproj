@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		EE4825D73E4C0EE50EE7E356 /* libPods-GuZhi_V2EX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0271DB8582CCBFF70D917ACE /* libPods-GuZhi_V2EX.a */; };
 		FD55FA091D59977900794EE0 /* GZHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FD55FA081D59977900794EE0 /* GZHelper.m */; };
-		FD56C4B21D560B00004E36B0 /* avatar_plasehoder.png in Resources */ = {isa = PBXBuildFile; fileRef = FD56C4B11D560B00004E36B0 /* avatar_plasehoder.png */; };
+		FD56C4B21D560B00004E36B0 /* avatar_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = FD56C4B11D560B00004E36B0 /* avatar_placeholder.png */; };
 		FD65E7231D47C42B009D2E5E /* GZTopicListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD65E7221D47C42B009D2E5E /* GZTopicListViewController.m */; };
 		FD65E7261D47C664009D2E5E /* GZHotModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FD65E7251D47C664009D2E5E /* GZHotModel.m */; };
 		FD65E7291D47C6C7009D2E5E /* GZMemberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FD65E7281D47C6C7009D2E5E /* GZMemberModel.m */; };
@@ -52,7 +52,7 @@
 		EA71F6C5A787FE6E04F186D1 /* Pods-GuZhi_V2EX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuZhi_V2EX.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuZhi_V2EX/Pods-GuZhi_V2EX.release.xcconfig"; sourceTree = "<group>"; };
 		FD55FA071D59977900794EE0 /* GZHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZHelper.h; path = Helper/GZHelper.h; sourceTree = "<group>"; };
 		FD55FA081D59977900794EE0 /* GZHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZHelper.m; path = Helper/GZHelper.m; sourceTree = "<group>"; };
-		FD56C4B11D560B00004E36B0 /* avatar_plasehoder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_plasehoder.png; sourceTree = "<group>"; };
+		FD56C4B11D560B00004E36B0 /* avatar_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_placeholder.png; sourceTree = "<group>"; };
 		FD65E7211D47C42B009D2E5E /* GZTopicListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZTopicListViewController.h; path = Controllers/GZTopicListViewController.h; sourceTree = "<group>"; };
 		FD65E7221D47C42B009D2E5E /* GZTopicListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZTopicListViewController.m; path = Controllers/GZTopicListViewController.m; sourceTree = "<group>"; };
 		FD65E7241D47C664009D2E5E /* GZHotModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZHotModel.h; path = Models/GZHotModel.h; sourceTree = "<group>"; };
@@ -153,7 +153,7 @@
 		FD56C4B01D560ADF004E36B0 /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				FD56C4B11D560B00004E36B0 /* avatar_plasehoder.png */,
+				FD56C4B11D560B00004E36B0 /* avatar_placeholder.png */,
 			);
 			name = Image;
 			sourceTree = "<group>";
@@ -375,7 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD90724A1D242E42003CAD5A /* LaunchScreen.storyboard in Resources */,
-				FD56C4B21D560B00004E36B0 /* avatar_plasehoder.png in Resources */,
+				FD56C4B21D560B00004E36B0 /* avatar_placeholder.png in Resources */,
 				FD9072471D242E42003CAD5A /* Assets.xcassets in Resources */,
 				FD9072451D242E42003CAD5A /* Main.storyboard in Resources */,
 			);

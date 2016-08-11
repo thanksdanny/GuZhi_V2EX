@@ -19,6 +19,10 @@
 @implementation GZReplyCell
 
 
+//- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+//    
+//}
+
 - (void)awakeFromNib
 {
     [super awakeFromNib];
@@ -39,7 +43,7 @@
     // 头像
     self.avatar.layer.cornerRadius = 3;
     self.avatar.layer.masksToBounds = YES;
-    [self.avatar sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https:%@", [_model.member valueForKey:@"avatar_mini"]]] placeholderImage:[UIImage imageNamed:@"avatar_plasehoder"]];
+    [self.avatar sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https:%@", [_model.member valueForKey:@"avatar_mini"]]] placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
     
     // 回复内容
     self.replyContentLabel.font = [UIFont systemFontOfSize:14];

@@ -36,9 +36,8 @@
 
 - (void)configureUI {
     self.title = @"最热";
-    self.view.backgroundColor = [UIColor redColor];
     
-    }
+}
 
 - (void)configureRefresh {
 
@@ -49,9 +48,6 @@
         
         [self.tableView.mj_header endRefreshing];
     }];
-    
-//    self.tableView.mj_header = [MJRefreshHeader headerWithRefreshingTarget:self
-//                                                          refreshingAction:@selector(updateHotData)];
 
     
     // 设置自动切换透明度（在导航栏下面自动隐藏）
@@ -100,6 +96,14 @@
 }
 
 #pragma mark - Table view delagate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 8;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
