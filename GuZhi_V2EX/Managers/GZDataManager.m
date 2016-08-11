@@ -171,6 +171,7 @@ typedef NS_ENUM(NSInteger, GZRequestMethod) {
                          URLString:@"/api/topics/hot.json"
                         parameters:nil
                            success:^(NSURLSessionDataTask *task, id responseObject) {
+//                               NSArray *list = [MTLJSONAdapter modelsOfClass:[GZHotModel class] fromJSONArray:responseObject error:nil];
                                GZHotList *list = [[GZHotList alloc] initWithArray:responseObject];
                                succes(list);
     }
@@ -180,7 +181,7 @@ typedef NS_ENUM(NSInteger, GZRequestMethod) {
 }
 
 // 请求主题详情
-- (NSURLSessionDataTask *)getTopicWithTopicId:(NSString *)topicId
+- (NSURLSessionDataTask *)getTopicWithTopicId:(NSNumber *)topicId
                                       success:(void (^)(GZTopicModel *model))success
                                       failure:(void (^)(NSError *error))failure {
     NSDictionary *parameters;
@@ -220,7 +221,7 @@ typedef NS_ENUM(NSInteger, GZRequestMethod) {
 }
 
 // 请求详情评论
-- (NSURLSessionDataTask *)getRepliesWithTopicId:(NSString *)topicId
+- (NSURLSessionDataTask *)getRepliesWithTopicId:(NSNumber *)topicId
                                         success:(void (^)(GZReplyList *list))success
                                         failure:(void (^)(NSError *error))failure {
     NSDictionary *parameters;

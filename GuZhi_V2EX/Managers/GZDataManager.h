@@ -27,7 +27,7 @@
                                       failure:(void (^)(NSError *error))failure;
 
 // 请求主题详情
-- (NSURLSessionDataTask *)getTopicWithTopicId:(NSString *)topicId
+- (NSURLSessionDataTask *)getTopicWithTopicId:(NSNumber *)topicId
                                       success:(void (^)(GZTopicModel *model))success
                                       failure:(void (^)(NSError *error))failure;
 
@@ -36,7 +36,7 @@
                                           failure:(void (^)(NSError *error))failure;
 
 // 请求详情评论
-- (NSURLSessionDataTask *)getRepliesWithTopicId:(NSString *)topicId
+- (NSURLSessionDataTask *)getRepliesWithTopicId:(NSNumber *)topicId
                                         success:(void (^)(GZReplyList *list))success
                                         failure:(void (^)(NSError *error))failure;
 @end

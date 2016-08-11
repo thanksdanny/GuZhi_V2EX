@@ -31,8 +31,9 @@
 
 + (NSValueTransformer *)memberJSONTransformer {
     return [MTLValueTransformer transformerUsingForwardBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
-//        NSError *error = nil;
-        return [MTLJSONAdapter modelOfClass:[GZMemberModel class] fromJSONDictionary:value error:nil];
+        NSError *err = nil;
+        id result = [MTLJSONAdapter modelOfClass:[GZMemberModel class] fromJSONDictionary:value error:&err];
+        return result;
     }];
 }
 
@@ -42,28 +43,6 @@
     }];
 }
 
-//+ (NSValueTransformer *)repliesJSONTransformer {
-//    return [MTLValueTransformer transformerUsingForwardBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
-//        return @([value integerValue]).stringValue;
-//    }];
-//}
-//
-//+ (NSValueTransformer *)URLJSONTransformer {
-//    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
-//}
-//
-//+ (NSValueTransformer *)HTMLURLJSONTransformer {
-//    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
-//}
-//
-//- (instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError **)error {
-//    self = [super initWithDictionary:dictionaryValue error:error];
-//    if (self == nil) return nil;
-//
-//    // Store a value that needs to be determined locally upon initialization.
-//
-//    return self;
-//}
 
 @end
 
@@ -75,7 +54,8 @@
         NSMutableArray *list = [[NSMutableArray alloc] init];
         for (NSDictionary *dict in array) {
             NSError *error = nil;
-            GZHotModel *model = [[GZHotModel alloc] initWithDictionary:dict error:&error];
+//            GZHotModel *model = [[GZHotModel alloc] initWithDictionary:dict error:&error];
+            GZHotModel *model = [MTLJSONAdapter modelOfClass:GZHotModel.class fromJSONDictionary:dict error:&error];
             [list addObject:model];
         }
         self.list = list;

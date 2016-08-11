@@ -10,7 +10,7 @@
 
 @interface GZMemberModel : MTLModel <MTLJSONSerializing>
 
-@property (nonatomic, copy) NSString *id;
+@property (nonatomic, copy) NSNumber *id;
 @property (nonatomic, copy) NSString *username;
 @property (nonatomic, copy) NSString *tagline;
 @property (nonatomic, copy) NSString *avatar_mini;
