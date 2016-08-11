@@ -46,12 +46,12 @@
     
     // 时间戳 + 回复数
     NSString *createdTimeStr = [GZHelper timeRemainDescriptionWithDateSP:_model.created];
-//    NSString *replyCountStr = [NSString stringWithFormat:@"%@ 回复", ];
+    NSString *replyCountStr = [NSString stringWithFormat:@"%@ 回复", _model.replies];
     UIFont *timeFont = [UIFont systemFontOfSize:13];
     self.createdAndReply.font = timeFont;
     self.createdAndReply.numberOfLines = 0;
     self.createdAndReply.textColor = [UIColor colorWithRed:90.0/255.0 green:90.0/255.0 blue:90.0/255.0 alpha:1];
-//    self.createdAndReply.text = [NSString stringWithFormat:@"%@/%@", createdTimeStr, replyCountStr];
+    self.createdAndReply.text = [NSString stringWithFormat:@"%@/%@", createdTimeStr, replyCountStr];
 }
 
 //- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
