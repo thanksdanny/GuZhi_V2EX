@@ -52,6 +52,10 @@
     self.createdAndReply.numberOfLines = 0;
     self.createdAndReply.textColor = [UIColor colorWithRed:90.0/255.0 green:90.0/255.0 blue:90.0/255.0 alpha:1];
     self.createdAndReply.text = [NSString stringWithFormat:@"%@/%@", createdTimeStr, replyCountStr];
+    
+    // 用户名
+    NSString *userNameStr = _model.member.username;
+    self.userName.text = userNameStr;
 }
 
 //- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
