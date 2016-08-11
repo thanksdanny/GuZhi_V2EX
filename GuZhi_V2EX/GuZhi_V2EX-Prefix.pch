@@ -1,0 +1,14 @@
+//
+//  GuZhi_V2EX-Prefix.pch
+//  GuZhi_V2EX
+//
+//  Created by Danny Ho on 8/12/16.
+//  Copyright © 2016 thanksdanny. All rights reserved.
+//
+
+#ifdef __OBJC__
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+#endif
