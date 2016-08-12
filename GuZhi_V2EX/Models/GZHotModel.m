@@ -45,23 +45,3 @@
 
 
 @end
-
-
-@implementation GZHotList
-
-- (instancetype)initWithArray:(NSArray *)array {
-    if (self = [super init]) {
-        NSMutableArray *list = [[NSMutableArray alloc] init];
-        for (NSDictionary *dict in array) {
-            NSError *error = nil;
-//            GZHotModel *model = [[GZHotModel alloc] initWithDictionary:dict error:&error];
-            GZHotModel *model = [MTLJSONAdapter modelOfClass:GZHotModel.class fromJSONDictionary:dict error:&error];
-            [list addObject:model];
-        }
-        self.list = list;
-    }
-    
-    return self;
-}
-
-@end

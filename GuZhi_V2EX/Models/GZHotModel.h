@@ -31,10 +31,3 @@
 @end
 
 
-@interface GZHotList : NSObject
-
-@property (nonatomic, strong) NSArray *list;
-
-- (instancetype)initWithArray:(NSArray *)array;
-
-@end

@@ -16,7 +16,7 @@
 
 @interface GZTopicListViewController () <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) GZHotList *hotList;
+@property (nonatomic, strong) NSArray *hotList;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 
 @end
@@ -65,21 +65,20 @@
 
 #pragma mark - Data
 
-- (void)setHotList:(GZHotList *)hotList {
+- (void)setHotList:(NSArray *)hotList {
     _hotList = hotList;
     
-    [self.tableView reloadData];
+    [self.tableView reloadData]; // 读完数据需要reloadData
 }
 
 - (void)updateHotData {
     // 首页获取数据
-    [[GZDataManager shareManager] getHotTopicsSuccess:^(GZHotList *list) {
-        NSLog(@"请求hotlist成功");
-        self.hotList = list;
+
+    [[GZDataManager shareManager] getHotTopicsSuccess:^(NSArray *hotArray) {
+        self.hotList = hotArray;
     } failure:^(NSError *error) {
         NSLog(@"%@", error);
     }];
-//    NSLog(@"%@", [self.hotList.list[0] valueForKey:@"id"]);
 }
 
 
@@ -89,9 +88,9 @@
     if ([segue.identifier isEqualToString:@"TODETAIL"]) {
         GZDetailTopicViewController *detailVC = [segue destinationViewController];
         
-        NSLog(@"%@",[self.hotList.list[self.tableView.indexPathForSelectedRow.row] class]);
+        NSLog(@"%@",[self.hotList[self.tableView.indexPathForSelectedRow.row] class]);
         // 传选中的model过去
-        detailVC.info = self.hotList.list[self.tableView.indexPathForSelectedRow.row];
+        detailVC.info = self.hotList[self.tableView.indexPathForSelectedRow.row];
     }
 }
 
@@ -112,7 +111,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return self.hotList.list.count;
+    return self.hotList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -126,7 +125,7 @@
 
 - (GZTopicListCell *)configureTopicCellWithCell:(GZTopicListCell *)cell IndexPath:(NSIndexPath *)indexpath {
     
-    GZHotModel *model = self.hotList.list[indexpath.row];
+    GZHotModel *model = self.hotList[indexpath.row];
     
     cell.model = model;
     
