@@ -195,6 +195,8 @@ typedef NS_ENUM(NSInteger, GZRequestMethod) {
                                NSLog(@"=========%@", responseObject);
                                NSError *error = nil;
                                GZTopicModel *model = [[GZTopicModel alloc] initWithDictionary:[responseObject firstObject] error:&error];
+//                               貌似可以直接用下面这个方法转，可以直接返回数组而不是model
+//                               GZTopicModel *model = [MTLJSONAdapter modelsOfClass:[GZTopicModel class] fromJSONArray:responseObject error:nil];
                                success(model);
                            }
                            failure:^(NSError *error) {
