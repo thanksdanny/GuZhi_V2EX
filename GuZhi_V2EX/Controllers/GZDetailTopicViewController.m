@@ -42,7 +42,7 @@
 }
 
 // 回复
-@property (nonatomic, strong) GZReplyList *replyDataList;
+@property (nonatomic, strong) NSArray *replyDataList;
 
 @end
 
@@ -210,18 +210,24 @@
 - (void)getReplyData {
     // 获取回复详情数据
     NSLog(@"请求回复开始");
-    [[GZDataManager shareManager] getRepliesWithTopicId:self.info.id success:^(GZReplyList *list) {
-        self.replyDataList = list;
+//    [[GZDataManager shareManager] getRepliesWithTopicId:self.info.id success:^(GZReplyList *list) {
+//        self.replyDataList = list;
+//        [detailTable reloadData];
+//    } failure:^(NSError *error) {
+//        NSLog(@"%@", error);
+//    }];
+    [[GZDataManager shareManager] getRepliesWithTopicId:self.info.id success:^(NSArray *repliesArray) {
+        self.replyDataList = repliesArray;
         [detailTable reloadData];
     } failure:^(NSError *error) {
-        NSLog(@"%@", error);
+       NSLog(@"%@", error);
     }];
 }
 
 #pragma mark - Table view data source
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    GZReplyModel *obj = [self.replyDataList.list objectAtIndex:indexPath.row];
+    GZReplyModel *obj = [self.replyDataList objectAtIndex:indexPath.row];
     UIFont *countFont = [UIFont systemFontOfSize:14];
     CGSize countSize = [obj.content boundingRectWithSize:CGSizeMake(cellContentWidth, 10000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:countFont} context:nil].size;
     
@@ -239,7 +245,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.replyDataList.list.count;
+    return self.replyDataList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -251,7 +257,7 @@
 #pragma mark - Configure TableCell
 
 - (GZReplyCell *)configureTopicCellWithCell:(GZReplyCell *)cell IndexPath:(NSIndexPath *)indexpath {
-    GZReplyModel *model = self.replyDataList.list[indexpath.row];
+    GZReplyModel *model = self.replyDataList[indexpath.row];
     
     cell.model = model;
     

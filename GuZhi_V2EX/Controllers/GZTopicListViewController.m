@@ -65,17 +65,12 @@
 
 #pragma mark - Data
 
-- (void)setHotList:(NSArray *)hotList {
-    _hotList = hotList;
-    
-    [self.tableView reloadData]; // 读完数据需要reloadData
-}
-
 - (void)updateHotData {
     // 首页获取数据
 
     [[GZDataManager shareManager] getHotTopicsSuccess:^(NSArray *hotArray) {
         self.hotList = hotArray;
+        [self.tableView reloadData]; // 读完数据需要reloadData
     } failure:^(NSError *error) {
         NSLog(@"%@", error);
     }];

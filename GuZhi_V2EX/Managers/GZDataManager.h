@@ -33,6 +33,7 @@
 
 // 请求详情评论
 - (NSURLSessionDataTask *)getRepliesWithTopicId:(NSNumber *)topicId
-                                        success:(void (^)(GZReplyList *list))success
+                                        success:(void (^)(NSArray *repliesArray))success
                                         failure:(void (^)(NSError *error))failure;
+
 @end

@@ -21,11 +21,3 @@
 @property (nonatomic, copy  ) NSString      *last_modified;
 
 @end
-
-@interface GZReplyList : NSObject
-
-@property (nonatomic, strong) NSArray *list;
-
-- (instancetype)initWithArray:(NSArray *)array;
-
-@end

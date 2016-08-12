@@ -223,26 +223,24 @@ typedef NS_ENUM(NSInteger, GZRequestMethod) {
 }
 
 // 请求详情评论
+
 - (NSURLSessionDataTask *)getRepliesWithTopicId:(NSNumber *)topicId
-                                        success:(void (^)(GZReplyList *list))success
+                                        success:(void (^)(NSArray *repliesArray))success
                                         failure:(void (^)(NSError *error))failure {
     NSDictionary *parameters;
     if (topicId) {
-        parameters = @{@"topic_id" : topicId};
+        parameters = @{@"topic_ic" : topicId};
     }
-    return [self requestWithMethod:GZRequestMethodJSONGET
-                         URLString:@"/api/replies/show.json"
-                        parameters:parameters
-                           success:^(NSURLSessionDataTask *task, id responseObject) {
-                               NSLog(@"%@", responseObject);
-                               GZReplyList *list = [[GZReplyList alloc] initWithArray:responseObject];
-                               NSLog(@"%@", responseObject);
-                               success(list);
-                           }
-                           failure:^(NSError *error) {
-                               failure(error);
-                           }];
+    return  [self requestWithMethod:GZRequestMethodJSONGET
+                          URLString:@"/api/replies/show.json"
+                         parameters:parameters
+                            success:^(NSURLSessionDataTask *task, id responseObject) {
+                                NSArray *repliesArray = [MTLJSONAdapter modelsOfClass:[GZTopicModel class] fromJSONArray:responseObject error:nil];
+                                success(repliesArray);
+                            }
+                            failure:^(NSError *error) {
+                                failure(error);
+                            }];
 }
-
 
 @end
