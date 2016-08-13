@@ -210,6 +210,7 @@
 - (void)getReplyData {
     // 获取回复详情数据
     [[GZDataManager shareManager] getRepliesWithTopicId:self.info.id success:^(NSArray *repliesArray) {
+        NSLog(@"%@",repliesArray);
         self.replyDataList = repliesArray;
         [detailTable reloadData];
     } failure:^(NSError *error) {
@@ -246,7 +247,7 @@
     GZReplyCell *replyCell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];    
     
     return [self configureTopicCellWithCell:replyCell IndexPath:indexPath];
-} 
+}
 
 #pragma mark - Configure TableCell
 

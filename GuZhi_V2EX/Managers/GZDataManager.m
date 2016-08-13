@@ -36,7 +36,7 @@
  */
 
 
-// 主题回复 http://www.v2ex.com/api/replies/show.json?topic_id=296478
+// 主题回复 http://www.v2ex.com/api/replies/show.json?topic_id=299071
 // 主题详情 http://www.v2ex.com/api/topics/show.json?id=296023
 
 #import "GZDataManager.h"
@@ -211,14 +211,15 @@ typedef NS_ENUM(NSInteger, GZRequestMethod) {
                                         failure:(void (^)(NSError *error))failure {
     NSDictionary *parameters;
     if (topicId) {
-        parameters = @{@"id" : topicId};
+        parameters = @{@"topic_id" : topicId};
     }
     return  [self requestWithMethod:GZRequestMethodJSONGET
                           URLString:@"/api/replies/show.json"
                          parameters:parameters
                             success:^(NSURLSessionDataTask *task, id responseObject) {
-                                NSLog(@"%@",responseObject);
-                                NSArray *repliesArray = [MTLJSONAdapter modelsOfClass:[GZReplyModel class] fromJSONArray:responseObject error:nil];
+                                NSLog(@"%@===========================================这是评论详情",responseObject);
+                                NSError *err;
+                                NSArray *repliesArray = [MTLJSONAdapter modelsOfClass:[GZReplyModel class] fromJSONArray:responseObject error:&err];
                                 success(repliesArray);
                             }
                             failure:^(NSError *error) {

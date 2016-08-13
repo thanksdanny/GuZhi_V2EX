@@ -70,6 +70,7 @@
     // 首页获取数据
 
     [[GZDataManager shareManager] getHotTopicsSuccess:^(NSArray *hotArray) {
+        NSLog(@"请求成功hotArray=================================%@", hotArray);
         self.hotList = hotArray;
         [self.tableView reloadData]; // 读完数据需要reloadData
     } failure:^(NSError *error) {
