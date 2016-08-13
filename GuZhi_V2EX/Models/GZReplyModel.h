@@ -12,7 +12,7 @@
 
 @interface GZReplyModel : MTLModel <MTLJSONSerializing>
 
-@property (nonatomic, copy  ) NSString      *id;
+@property (nonatomic, copy  ) NSNumber      *id;
 @property (nonatomic, copy  ) NSString      *thanks;
 @property (nonatomic, copy  ) NSString      *content;
 @property (nonatomic, copy  ) NSString      *content_rendered;

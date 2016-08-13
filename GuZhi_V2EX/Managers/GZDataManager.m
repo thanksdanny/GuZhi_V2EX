@@ -204,24 +204,6 @@ typedef NS_ENUM(NSInteger, GZRequestMethod) {
                            }];
 }
 
-- (NSURLSessionDataTask *)getTopicListWithTopicId:(NSNumber *)topicId
-                                          success:(void (^)(GZTopicList *list))success
-                                          failure:(void (^)(NSError *error))failure {
-    NSDictionary *parameters;
-    if (topicId) {
-        parameters = @{@"id" : topicId};
-    }
-    return [self requestWithMethod:GZRequestMethodHTTPGET
-                         URLString:@"/api/topics/show.json"
-                        parameters:parameters
-                           success:^(NSURLSessionDataTask *task, id responseObject) {
-                               GZTopicList *list = [[GZTopicList alloc] initWithArray:responseObject];
-                               success(list);
-                           } failure:^(NSError *error) {
-                               failure(error);
-                           }];
-}
-
 // 请求详情评论
 
 - (NSURLSessionDataTask *)getRepliesWithTopicId:(NSNumber *)topicId
@@ -229,16 +211,18 @@ typedef NS_ENUM(NSInteger, GZRequestMethod) {
                                         failure:(void (^)(NSError *error))failure {
     NSDictionary *parameters;
     if (topicId) {
-        parameters = @{@"topic_ic" : topicId};
+        parameters = @{@"id" : topicId};
     }
     return  [self requestWithMethod:GZRequestMethodJSONGET
                           URLString:@"/api/replies/show.json"
                          parameters:parameters
                             success:^(NSURLSessionDataTask *task, id responseObject) {
-                                NSArray *repliesArray = [MTLJSONAdapter modelsOfClass:[GZTopicModel class] fromJSONArray:responseObject error:nil];
+                                NSLog(@"%@",responseObject);
+                                NSArray *repliesArray = [MTLJSONAdapter modelsOfClass:[GZReplyModel class] fromJSONArray:responseObject error:nil];
                                 success(repliesArray);
                             }
                             failure:^(NSError *error) {
+                                NSLog(@"请求评论失败");
                                 failure(error);
                             }];
 }

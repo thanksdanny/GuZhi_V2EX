@@ -22,7 +22,7 @@
 
 #pragma mark - GET
 
-// 请求hotList
+// 请求hot
 - (NSURLSessionDataTask *)getHotTopicsSuccess:(void (^)(NSArray *hotArray))succes
                                       failure:(void (^)(NSError *error))failure;
 
@@ -30,6 +30,7 @@
 - (NSURLSessionDataTask *)getTopicWithTopicId:(NSNumber *)topicId
                                       success:(void (^)(GZTopicModel *model))success
                                       failure:(void (^)(NSError *error))failure;
+
 
 // 请求详情评论
 - (NSURLSessionDataTask *)getRepliesWithTopicId:(NSNumber *)topicId

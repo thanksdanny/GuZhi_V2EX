@@ -209,19 +209,13 @@
 
 - (void)getReplyData {
     // 获取回复详情数据
-    NSLog(@"请求回复开始");
-//    [[GZDataManager shareManager] getRepliesWithTopicId:self.info.id success:^(GZReplyList *list) {
-//        self.replyDataList = list;
-//        [detailTable reloadData];
-//    } failure:^(NSError *error) {
-//        NSLog(@"%@", error);
-//    }];
     [[GZDataManager shareManager] getRepliesWithTopicId:self.info.id success:^(NSArray *repliesArray) {
         self.replyDataList = repliesArray;
         [detailTable reloadData];
     } failure:^(NSError *error) {
        NSLog(@"%@", error);
     }];
+    
 }
 
 #pragma mark - Table view data source
@@ -252,7 +246,7 @@
     GZReplyCell *replyCell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];    
     
     return [self configureTopicCellWithCell:replyCell IndexPath:indexPath];
-}
+} 
 
 #pragma mark - Configure TableCell
 

@@ -27,6 +27,7 @@
     [super viewDidLoad];
     
     [self configureUI];
+    [self updateHotData];
     [self configureRefresh];
     
 }
