@@ -24,8 +24,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    GZHomeViewController *homeVC = [[GZHomeViewController alloc] init];
-    GZTopicListViewController *homeVC = [[GZTopicListViewController alloc] init];
+    GZHomeViewController *homeVC = [[GZHomeViewController alloc] init];
+//    GZTopicListViewController *homeVC = [[GZTopicListViewController alloc] init];
     
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homeVC];
     UINavigationBar *appearance = [UINavigationBar appearance];
