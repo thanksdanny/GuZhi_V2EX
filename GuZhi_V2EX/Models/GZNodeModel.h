@@ -21,3 +21,23 @@
 @property (nonatomic, copy) NSString *avatar_large;
 
 @end
+
+@interface GZNodeObject : NSObject
+
+@property (nonatomic, copy) NSString *nodeName;
+@property (nonatomic, copy) NSString *nodeCode;
+@property (nonatomic, copy) NSArray *childNodeArray;
+
+- (id)initWithNodeName:(NSString *)name NodeCode:(NSString *)code;
+
+@end
+
+@interface GZChildNodeObject : NSObject
+
+@property (nonatomic ,copy) NSString *childNodeName;
+@property (nonatomic, copy) NSString *childNodeCode;
+
+- (id)initWithChildNodeName:(NSString *)name CNode:(NSString *)code;
+
+@end
+

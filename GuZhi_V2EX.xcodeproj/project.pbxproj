@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		EE4825D73E4C0EE50EE7E356 /* libPods-GuZhi_V2EX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0271DB8582CCBFF70D917ACE /* libPods-GuZhi_V2EX.a */; };
 		FD55FA091D59977900794EE0 /* GZHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FD55FA081D59977900794EE0 /* GZHelper.m */; };
+		FD55FA0E1D604C8400794EE0 /* GZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD55FA0D1D604C8400794EE0 /* GZHomeViewController.m */; };
+		FD55FA111D60514A00794EE0 /* GZLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD55FA101D60514A00794EE0 /* GZLeftMenuViewController.m */; };
+		FD55FA131D605DA200794EE0 /* GZLeftMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD55FA121D605DA200794EE0 /* GZLeftMenuViewController.xib */; };
 		FD56C4B21D560B00004E36B0 /* avatar_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = FD56C4B11D560B00004E36B0 /* avatar_placeholder.png */; };
 		FD65E7231D47C42B009D2E5E /* GZTopicListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD65E7221D47C42B009D2E5E /* GZTopicListViewController.m */; };
 		FD65E7261D47C664009D2E5E /* GZHotModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FD65E7251D47C664009D2E5E /* GZHotModel.m */; };
@@ -53,6 +56,11 @@
 		FD55FA071D59977900794EE0 /* GZHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZHelper.h; path = Helper/GZHelper.h; sourceTree = "<group>"; };
 		FD55FA081D59977900794EE0 /* GZHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZHelper.m; path = Helper/GZHelper.m; sourceTree = "<group>"; };
 		FD55FA0B1D5CD89B00794EE0 /* GuZhi_V2EX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GuZhi_V2EX-Prefix.pch"; sourceTree = "<group>"; };
+		FD55FA0C1D604C8400794EE0 /* GZHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZHomeViewController.h; path = Controllers/GZHomeViewController.h; sourceTree = "<group>"; };
+		FD55FA0D1D604C8400794EE0 /* GZHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZHomeViewController.m; path = Controllers/GZHomeViewController.m; sourceTree = "<group>"; };
+		FD55FA0F1D60514A00794EE0 /* GZLeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZLeftMenuViewController.h; path = Controllers/GZLeftMenuViewController.h; sourceTree = "<group>"; };
+		FD55FA101D60514A00794EE0 /* GZLeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZLeftMenuViewController.m; path = Controllers/GZLeftMenuViewController.m; sourceTree = "<group>"; };
+		FD55FA121D605DA200794EE0 /* GZLeftMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GZLeftMenuViewController.xib; path = Controllers/GZLeftMenuViewController.xib; sourceTree = "<group>"; };
 		FD56C4B11D560B00004E36B0 /* avatar_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_placeholder.png; sourceTree = "<group>"; };
 		FD65E7211D47C42B009D2E5E /* GZTopicListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZTopicListViewController.h; path = Controllers/GZTopicListViewController.h; sourceTree = "<group>"; };
 		FD65E7221D47C42B009D2E5E /* GZTopicListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZTopicListViewController.m; path = Controllers/GZTopicListViewController.m; sourceTree = "<group>"; };
@@ -263,6 +271,11 @@
 				FD65E7221D47C42B009D2E5E /* GZTopicListViewController.m */,
 				FDBEE55B1D4D309800EC5388 /* GZDetailTopicViewController.h */,
 				FDBEE55C1D4D309800EC5388 /* GZDetailTopicViewController.m */,
+				FD55FA0C1D604C8400794EE0 /* GZHomeViewController.h */,
+				FD55FA0D1D604C8400794EE0 /* GZHomeViewController.m */,
+				FD55FA0F1D60514A00794EE0 /* GZLeftMenuViewController.h */,
+				FD55FA101D60514A00794EE0 /* GZLeftMenuViewController.m */,
+				FD55FA121D605DA200794EE0 /* GZLeftMenuViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -337,7 +350,6 @@
 				TargetAttributes = {
 					FD9072361D242E42003CAD5A = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = TX6G2DNPWK;
 					};
 					FD90724F1D242E43003CAD5A = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -376,6 +388,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD55FA131D605DA200794EE0 /* GZLeftMenuViewController.xib in Resources */,
 				FD90724A1D242E42003CAD5A /* LaunchScreen.storyboard in Resources */,
 				FD56C4B21D560B00004E36B0 /* avatar_placeholder.png in Resources */,
 				FD9072471D242E42003CAD5A /* Assets.xcassets in Resources */,
@@ -456,11 +469,13 @@
 				FD65E72C1D47C6DB009D2E5E /* GZNodeModel.m in Sources */,
 				FD9072781D243533003CAD5A /* GZTopicListCell.m in Sources */,
 				FD55FA091D59977900794EE0 /* GZHelper.m in Sources */,
+				FD55FA0E1D604C8400794EE0 /* GZHomeViewController.m in Sources */,
 				FDBEE55D1D4D309800EC5388 /* GZDetailTopicViewController.m in Sources */,
 				FD65E7261D47C664009D2E5E /* GZHotModel.m in Sources */,
 				FDC77D9D1D50C6E200A74719 /* GZReplyCell.m in Sources */,
 				FD65E7231D47C42B009D2E5E /* GZTopicListViewController.m in Sources */,
 				FDBEE5541D4D132C00EC5388 /* GZReplyModel.m in Sources */,
+				FD55FA111D60514A00794EE0 /* GZLeftMenuViewController.m in Sources */,
 				FD90723F1D242E42003CAD5A /* AppDelegate.m in Sources */,
 				FD90723C1D242E42003CAD5A /* main.m in Sources */,
 				FD65E7291D47C6C7009D2E5E /* GZMemberModel.m in Sources */,

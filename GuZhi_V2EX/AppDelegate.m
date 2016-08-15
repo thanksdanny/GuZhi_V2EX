@@ -7,8 +7,16 @@
 //
 
 #import "AppDelegate.h"
+#import "GZHomeViewController.h"
+#import "GZLeftMenuViewController.h"
+#import "GZTopicListViewController.h"
+
+#import "MMDrawerController.h"
 
 @interface AppDelegate ()
+{
+    MMDrawerController *_homeDrawerController;
+}
 
 @end
 
@@ -16,7 +24,33 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+//    GZHomeViewController *homeVC = [[GZHomeViewController alloc] init];
+    GZTopicListViewController *homeVC = [[GZTopicListViewController alloc] init];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homeVC];
+    UINavigationBar *appearance = [UINavigationBar appearance];
+    [appearance setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    [appearance setShadowImage:[[UIImage alloc] init]];
+    [appearance setTranslucent:NO];
+    [appearance setBarStyle:UIBarStyleBlackOpaque];
+    [appearance setBarTintColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1]]; // 颜色往后统一
+    [appearance setTintColor:[UIColor whiteColor]];
+    [appearance setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor], NSForegroundColorAttributeName, [UIFont boldSystemFontOfSize:15], NSFontAttributeName, nil]];
+    
+    GZLeftMenuViewController *leftMenuVC = [[GZLeftMenuViewController alloc] init];
+    
+    _homeDrawerController = [[MMDrawerController alloc] initWithCenterViewController:nav
+                                                            leftDrawerViewController:leftMenuVC
+                                                           rightDrawerViewController:nil];
+    [_homeDrawerController setMaximumLeftDrawerWidth:90.0];
+    [_homeDrawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window addSubview:_homeDrawerController.view];
+    self.window.rootViewController = _homeDrawerController;
+    
+    [_window makeKeyWindow];
+    
     return YES;
 }
 
