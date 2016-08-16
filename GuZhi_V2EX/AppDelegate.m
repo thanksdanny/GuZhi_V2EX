@@ -49,7 +49,7 @@
     [self.window addSubview:_homeDrawerController.view];
     self.window.rootViewController = _homeDrawerController;
     
-    [_window makeKeyWindow];
+    [_window makeKeyAndVisible];
     
     return YES;
 }

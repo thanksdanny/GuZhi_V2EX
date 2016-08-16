@@ -113,12 +113,12 @@ extern NSArray *__nodeArr;
     self.navigationItem.titleView = childNodeButton;
     
     
-    
     [super viewDidLoad];  // super前就做操作
     
     [self initTable];
     [self initHeaderNavBtn];
     
+    self.view.backgroundColor = [UIColor redColor];
     /** 初始化数据对象数据 */
     self.articleDataArray = [NSMutableArray array];
     
@@ -137,10 +137,9 @@ extern NSArray *__nodeArr;
 # pragma mark - init view
 
 - (void)initTable {
-    self.mainTable.delegate = self;
-    self.mainTable.dataSource = self;
-    self.mainTable.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
+//    self.mainTable.delegate = self;
+//    self.mainTable.dataSource = self;
+//    self.mainTable.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)initHeaderNavBtn {
