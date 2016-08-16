@@ -9,7 +9,7 @@
             <connections>
                 <outlet property="headerView" destination="6dt-Hs-Mo8" id="bOp-BL-LCK"/>
                 <outlet property="mainTable" destination="iN0-l3-epB" id="Nre-lW-hju"/>
-                <outlet property="view" destination="VKx-Jz-P8K" id="5Sl-Fp-3SK"/>
+                <outlet property="view" destination="iN0-l3-epB" id="rkw-Wa-pA5"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
