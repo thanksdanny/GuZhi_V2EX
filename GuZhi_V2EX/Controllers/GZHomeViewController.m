@@ -170,7 +170,7 @@ extern NSArray *__nodeArr;
 
 - (void)loadData {
     [[GZDataManager shareManager] getNodeTopicListWithNodeId:nil
-                                                    nodeName:isRequestChildNode ? childNodeCode : fatherNodeCode
+                                                    nodeName:@"qna"
                                                     userName:nil
                                                         page:1
                                                      success:^(NSArray *topicArray) {
