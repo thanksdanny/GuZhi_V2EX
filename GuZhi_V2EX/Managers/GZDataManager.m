@@ -226,4 +226,45 @@ typedef NS_ENUM(NSInteger, GZRequestMethod) {
                             }];
 }
 
+// 请求获得节点页数据
+
+- (NSURLSessionDataTask *)getNodeTopicListWithNodeId:(NSString *)nodeId
+                                            nodeName:(NSString *)nodeName
+                                            userName:(NSString *)userName
+                                                page:(NSInteger)page
+                                           success:(void (^)(NSArray *topicArray))success
+                                           failure:(void(^)(NSError *error))failure {
+    NSDictionary *parameters;
+    if (nodeId) {
+        parameters = @{
+                       @"node_id":nodeId,
+                       @"p" : @(page)
+                       };
+    }
+    if (nodeName) {
+        parameters = @{
+                       @"node_name":nodeName,
+                       @"p" : @(page)
+                       };
+    }
+    
+    if (userName) {
+        parameters = @{
+                       @"username":userName,
+                       @"p" : @(page)
+                       };
+    }
+    return [self requestWithMethod:GZRequestMethodJSONGET
+                         URLString:@"/api/topics/show.json"
+                        parameters:parameters
+                           success:^(NSURLSessionDataTask *task, id responseObject) {
+                               NSError *err;
+                               NSArray *nodeArray = [MTLJSONAdapter modelsOfClass:[GZTopicModel class] fromJSONArray:responseObject error:&err];
+                               success(nodeArray);
+                           }
+                           failure:^(NSError *error) {
+                               NSLog(@"节点页面请求失败:%@===========", error);
+                           }];
+}
+
 @end

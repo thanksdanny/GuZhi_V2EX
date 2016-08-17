@@ -37,4 +37,12 @@
                                         success:(void (^)(NSArray *repliesArray))success
                                         failure:(void (^)(NSError *error))failure;
 
+// 请求获得节点页数据
+
+- (NSURLSessionDataTask *)getNodeTopicListWithNodeId:(NSString *)nodeId
+                                            nodeName:(NSString *)nodeName
+                                            userName:(NSString *)userName
+                                                page:(NSInteger)page
+                                             success:(void (^)(NSArray *topicArray))success
+                                             failure:(void(^)(NSError *error))failure;
 @end

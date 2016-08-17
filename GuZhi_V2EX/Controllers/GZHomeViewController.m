@@ -9,6 +9,7 @@
 #import "GZHomeViewController.h"
 #import "GZLeftMenuViewController.h"
 #import "GZNodeModel.h"
+#import "GZDataManager.h"
 
 #import "MJRefresh.h"
 #import "MJRefreshHeader.h"
@@ -83,7 +84,7 @@ extern NSArray *__nodeArr;
     isRequestChildNode = NO;
     
     /** 页码 */
-    page = 1;
+    page = @1;
     
     /** 默认父节点名字 */
     fatherNodeCode = @"all";
@@ -127,6 +128,8 @@ extern NSArray *__nodeArr;
     /** 开始刷新 */
     
     /** 上拉加载 */
+    
+    [self loadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -161,6 +164,24 @@ extern NSArray *__nodeArr;
     NSLog(@"============= - (void)initNodeBGView 这个方法还没有写完啊 ================");
     NSLog(@"============= - (void)initNodeBGView 这个方法还没有写完啊 ================");
 }
+
+
+#pragma mark - get data
+
+- (void)loadData {
+    [[GZDataManager shareManager] getNodeTopicListWithNodeId:nil
+                                                    nodeName:isRequestChildNode ? childNodeCode : fatherNodeCode
+                                                    userName:nil
+                                                        page:1
+                                                     success:^(NSArray *topicArray) {
+                                                         NSLog(@"%@", topicArray);
+                                                         NSLog(@"========================");
+                                                     }
+                                                     failure:^(NSError *error) {
+                                                         NSLog(@"请求失败:%@", error);
+                                                     }];
+}
+
 
 #pragma mark - childMenuAction
 
