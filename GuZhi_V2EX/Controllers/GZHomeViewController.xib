@@ -8,8 +8,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GZHomeViewController">
             <connections>
                 <outlet property="headerView" destination="6dt-Hs-Mo8" id="bOp-BL-LCK"/>
-                <outlet property="mainTable" destination="iN0-l3-epB" id="Nre-lW-hju"/>
-                <outlet property="view" destination="iN0-l3-epB" id="rkw-Wa-pA5"/>
+                <outlet property="mainTable" destination="VKx-Jz-P8K" id="A2l-DU-hsW"/>
+                <outlet property="view" destination="iN0-l3-epB" id="VYW-U2-4bl"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -20,6 +20,10 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VKx-Jz-P8K">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="sGA-Xc-Mrd"/>
+                        <outlet property="delegate" destination="-1" id="sFS-cv-o9j"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

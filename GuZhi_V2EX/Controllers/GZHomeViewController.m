@@ -84,7 +84,7 @@ extern NSArray *__nodeArr;
     isRequestChildNode = NO;
     
     /** 页码 */
-    page = @1;
+    page = 1;
     
     /** 默认父节点名字 */
     fatherNodeCode = @"all";
@@ -140,9 +140,9 @@ extern NSArray *__nodeArr;
 # pragma mark - init view
 
 - (void)initTable {
-//    self.mainTable.delegate = self;
-//    self.mainTable.dataSource = self;
-//    self.mainTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.mainTable.delegate = self;
+    self.mainTable.dataSource = self;
+    self.mainTable.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)initHeaderNavBtn {
@@ -167,18 +167,28 @@ extern NSArray *__nodeArr;
 
 
 #pragma mark - get data
+#warning node参数要处理好
 
 - (void)loadData {
     [[GZDataManager shareManager] getNodeTopicListWithNodeId:nil
                                                     nodeName:@"qna"
                                                     userName:nil
-                                                        page:1
+                                                        page:page
                                                      success:^(NSArray *topicArray) {
-                                                         NSLog(@"%@", topicArray);
-                                                         NSLog(@"========================");
+                                                         NSLog(@"%@=============================", topicArray[0]);
+                                                         [self.articleDataArray removeAllObjects];
+                                                         [self.articleDataArray addObjectsFromArray:topicArray];
+                                                         if (self.articleDataArray.count != 0) {
+                                                            // [self.mainTable reloadData];
+                                                         }
+                                                         [header endRefreshing];
+                                                         // footer已经被抛弃，新的用mj_footer
+                                                         //[self.mainTable.mj_footer endRefreshing];
                                                      }
                                                      failure:^(NSError *error) {
                                                          NSLog(@"请求失败:%@", error);
+//                                                         [header endRefreshing];
+//                                                         [self.mainTable.mj_footer endRefreshing];
                                                      }];
 }
 
@@ -209,6 +219,36 @@ extern NSArray *__nodeArr;
 
 - (void)leftDrawerButtonPress:(id)sender {
     [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+}
+
+
+#pragma mark - table view
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 8;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+}
+
+// 这段有毛用啊？！
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if ([tableView isEqual:childNodeTable]) {
+        return 0;
+    } else {
+        return 0;
+    }
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString * cellIdentifier = @"Cell";
+    
+    UITableViewCell * cell = [self.mainTable dequeueReusableCellWithIdentifier:cellIdentifier];
+    return cell;
 }
 
 
