@@ -10,6 +10,7 @@
 #import "GZLeftMenuViewController.h"
 #import "GZNodeModel.h"
 #import "GZDataManager.h"
+#import "GZTopicListCell.h"
 
 #import "MJRefresh.h"
 #import "MJRefreshHeader.h"
@@ -55,10 +56,11 @@ extern NSArray *__nodeArr;
 
 }
 /** tableview */
-@property (strong, nonatomic) IBOutlet UITableView *mainTable;
+//@property (strong, nonatomic) IBOutlet UITableView *mainTable;
+@property (nonatomic, strong) UITableView *tableView;
 
 /** headerView */
-@property (strong, nonatomic) IBOutlet UIView *headerView;
+//@property (strong, nonatomic) IBOutlet UIView *headerView;
 
 /** infoData */
 @property (nonatomic, strong) NSMutableArray *articleDataArray;
@@ -68,6 +70,13 @@ extern NSArray *__nodeArr;
 @implementation GZHomeViewController
 
 #pragma mark - view的生命周期
+
+- (void)loadView {
+    [super loadView];
+    
+    NSLog(@"HomeViewController 进入 loadView=================");
+    [self configureTableView];
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     /** 开启左滑 */
@@ -116,7 +125,7 @@ extern NSArray *__nodeArr;
     
     [super viewDidLoad];  // super前就做操作
     
-    [self initTable];
+//    [self initTable];
     [self initHeaderNavBtn];
     
     self.view.backgroundColor = [UIColor redColor];
@@ -137,12 +146,22 @@ extern NSArray *__nodeArr;
     // Dispose of any resources that can be recreated.
 }
 
-# pragma mark - init view
+# pragma mark - configure view
 
-- (void)initTable {
-    self.mainTable.delegate = self;
-    self.mainTable.dataSource = self;
-    self.mainTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+//- (void)initTable {
+//    self.mainTable.delegate = self;
+//    self.mainTable.dataSource = self;
+//    self.mainTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+//}
+
+- (void)configureTableView {
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame];
+    self.tableView.backgroundColor = [UIColor colorWithWhite:0.98 alpha:1.000];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+    [self.view addSubview:self.tableView];
 }
 
 - (void)initHeaderNavBtn {
@@ -247,7 +266,7 @@ extern NSArray *__nodeArr;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString * cellIdentifier = @"Cell";
     
-    UITableViewCell * cell = [self.mainTable dequeueReusableCellWithIdentifier:cellIdentifier];
+    * cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     return cell;
 }
 
