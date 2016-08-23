@@ -11,7 +11,7 @@
 #import "GZDetailTopicViewController.h"
 #import "GZTopicListCell.h"
 #import "GZDataManager.h"
-#import "GZHotModel.h"
+#import "GZTopicModel.h"
 #import "MJRefresh.h"
 
 @interface GZTopicListViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -122,7 +122,7 @@
 
 - (GZTopicListCell *)configureTopicCellWithCell:(GZTopicListCell *)cell IndexPath:(NSIndexPath *)indexpath {
     
-    GZHotModel *model = self.hotList[indexpath.row];
+    GZTopicModel *model = self.hotList[indexpath.row];
     
     cell.model = model;
     

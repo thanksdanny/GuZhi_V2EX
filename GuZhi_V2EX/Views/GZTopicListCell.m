@@ -7,7 +7,7 @@
 //
 
 #import "GZTopicListCell.h"
-#import "GZHotModel.h"
+#import "GZTopicModel.h"
 #import "GZMemberModel.h"
 #import "GZHelper.h"
 
@@ -28,7 +28,7 @@
 
 #pragma mark - Data Methods
 
-- (void)setModel:(GZHotModel *)model {
+- (void)setModel:(GZTopicModel *)model {
     _model = model;
     NSLog(@"%@", model);
     
