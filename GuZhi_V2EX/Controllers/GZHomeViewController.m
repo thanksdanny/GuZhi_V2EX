@@ -266,9 +266,20 @@ extern NSArray *__nodeArr;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString * cellIdentifier = @"Cell";
     
-    * cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    GZTopicListCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    return [self configureTopicCellWithCell:cell IndexPath:indexPath];
+}
+
+#pragma mark - Configure TableCell
+
+- (GZTopicListCell *)configureTopicCellWithCell:(GZTopicListCell *)cell IndexPath:(NSIndexPath *)indexpath {
+    GZTopicModel *model = self.articleDataArray[indexpath.row];
+    
+    cell.model = model;
+    
     return cell;
 }
+
 
 
 @end

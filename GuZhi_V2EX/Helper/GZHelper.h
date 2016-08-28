@@ -23,4 +23,9 @@
 // local
 + (NSArray *)localDateStringWithUTCString:(NSString *)dateString;
 
+
+// text
++ (CGFloat)getTextHeightWithText:(NSString *)text Font:(UIFont *)font;
++ (CGFloat)getTextHeightWithText:(NSString *)text Font:(UIFont *)font width:(CGFloat)width;
+
 @end

@@ -26,6 +26,9 @@
 @property (nonatomic, strong) GZMemberModel *member;
 @property (nonatomic, strong) GZNodeModel   *node;
 
+@property (nonatomic, assign) CGFloat cellHeight;
+@property (nonatomic, assign) CGFloat titleHeight;
+
 @end
 
 

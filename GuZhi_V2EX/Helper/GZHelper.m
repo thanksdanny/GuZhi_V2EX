@@ -107,6 +107,25 @@
     return localArray;
 }
 
+#pragma mark - text
+
++ (CGFloat)getTextHeightWithText:(NSString *)text Font:(UIFont *)font {
+    NSDictionary *attributes = @{
+                                 NSFontAttributeName : font,
+                                 };
+    CGRect expectedLabelRect = [text boundingRectWithSize:(CGSize){CGFLOAT_MAX, CGFLOAT_MAX} options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
+    
+    return CGRectGetWidth(expectedLabelRect);
+}
+
++ (CGFloat)getTextHeightWithText:(NSString *)text Font:(UIFont *)font width:(CGFloat)width {
+    NSDictionary *attributes = @{
+                                 NSFontAttributeName : font,
+                                 };
+    CGRect expectedLabelRect = [text boundingRectWithSize:(CGSize){width, CGFLOAT_MAX} options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
+    
+    return CGRectGetHeight(expectedLabelRect);
+}
 
 
 @end
