@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GZHotModel.h"
+#import "GZTopicModel.h"
 
 @interface GZTopicListCell : UITableViewCell
 
@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *nodeLabel;
 
 
-@property (nonatomic, strong) GZHotModel *model;
+@property (nonatomic, strong) GZTopicModel *model;
 
 
 @end

@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-@class GZHotModel;
+@class GZTopicModel;
 
 @interface GZDetailTopicViewController : UITableViewController
 
-@property (nonatomic, strong) GZHotModel *info;
+@property (nonatomic, strong) GZTopicModel *info;
 
 @end

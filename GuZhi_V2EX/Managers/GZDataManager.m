@@ -41,7 +41,6 @@
 
 #import "GZDataManager.h"
 #import <AFNetworking.h>
-#import "GZHotModel.h"
 #import "GZTopicModel.h"
 #import "GZReplyModel.h"
 
@@ -172,7 +171,7 @@ typedef NS_ENUM(NSInteger, GZRequestMethod) {
                          URLString:@"/api/topics/hot.json"
                         parameters:nil
                            success:^(NSURLSessionDataTask *task, id responseObject) {
-                               NSArray *hotArray = [MTLJSONAdapter modelsOfClass:[GZHotModel class] fromJSONArray:responseObject error:nil];
+                               NSArray *hotArray = [MTLJSONAdapter modelsOfClass:[GZTopicModel class] fromJSONArray:responseObject error:nil];
                                succes(hotArray);
                            }
                            failure:^(NSError *error) {
@@ -217,9 +216,7 @@ typedef NS_ENUM(NSInteger, GZRequestMethod) {
                           URLString:@"/api/replies/show.json"
                          parameters:parameters
                             success:^(NSURLSessionDataTask *task, id responseObject) {
-                                NSLog(@"%@===========================================这是评论详情",responseObject);
-                                NSError *err;
-                                NSArray *repliesArray = [MTLJSONAdapter modelsOfClass:[GZReplyModel class] fromJSONArray:responseObject error:&err];
+                                NSArray *repliesArray = [MTLJSONAdapter modelsOfClass:[GZReplyModel class] fromJSONArray:responseObject error:nil];
                                 success(repliesArray);
                             }
                             failure:^(NSError *error) {

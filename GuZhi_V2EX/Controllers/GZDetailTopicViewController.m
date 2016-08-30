@@ -8,7 +8,6 @@
 
 #import "GZDetailTopicViewController.h"
 #import "GZDataManager.h"
-#import "GZHotModel.h"
 #import "GZReplyModel.h"
 #import "GZMemberModel.h"
 #import "GZTopicModel.h"

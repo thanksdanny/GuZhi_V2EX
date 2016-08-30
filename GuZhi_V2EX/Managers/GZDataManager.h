@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GZHotModel.h"
+
 
 @class GZTopicModel;
 @class GZReplyList;
