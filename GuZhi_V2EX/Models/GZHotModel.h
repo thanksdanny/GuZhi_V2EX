@@ -1,8 +1,8 @@
 //
-//  GZTopicModel.h
+//  GZHotModel.h
 //  GuZhi_V2EX
 //
-//  Created by Danny Ho on 7/31/16.
+//  Created by Danny Ho on 7/27/16.
 //  Copyright © 2016 thanksdanny. All rights reserved.
 //
 
@@ -11,7 +11,7 @@
 @class GZMemberModel;
 @class GZNodeModel;
 
-@interface GZTopicModel : MTLModel <MTLJSONSerializing>
+@interface GZHotModel : MTLModel <MTLJSONSerializing>
 
 @property (nonatomic, copy) NSNumber *id;
 @property (nonatomic, copy) NSString *title;
@@ -23,17 +23,11 @@
 @property (nonatomic, copy) NSNumber *last_modified;
 @property (nonatomic, copy) NSNumber *last_touched;
 
-@property (nonatomic, strong) GZMemberModel *member;
-@property (nonatomic, strong) GZNodeModel   *node;
+@property (nonatomic, copy) GZMemberModel *member;
+@property (nonatomic, copy) GZNodeModel *node;
+
+@property (nonatomic, assign) NSArray *hotArray;
 
 @end
 
-
-@interface GZTopicList : NSObject
-
-@property (nonatomic, strong) NSArray *list;
-
-- (instancetype)initWithArray:(NSArray *)array;
-
-@end
 

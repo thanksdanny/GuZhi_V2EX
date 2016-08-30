@@ -13,10 +13,12 @@
 		FD55FA0E1D604C8400794EE0 /* GZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD55FA0D1D604C8400794EE0 /* GZHomeViewController.m */; };
 		FD55FA111D60514A00794EE0 /* GZLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD55FA101D60514A00794EE0 /* GZLeftMenuViewController.m */; };
 		FD55FA131D605DA200794EE0 /* GZLeftMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD55FA121D605DA200794EE0 /* GZLeftMenuViewController.xib */; };
+		FD55FA151D620DC000794EE0 /* GZHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD55FA141D620DC000794EE0 /* GZHomeViewController.xib */; };
 		FD55FA181D6218F700794EE0 /* circle-left.png in Resources */ = {isa = PBXBuildFile; fileRef = FD55FA161D6218F700794EE0 /* circle-left.png */; };
 		FD55FA191D6218F700794EE0 /* nav_menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FD55FA171D6218F700794EE0 /* nav_menu_icon.png */; };
 		FD56C4B21D560B00004E36B0 /* avatar_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = FD56C4B11D560B00004E36B0 /* avatar_placeholder.png */; };
 		FD65E7231D47C42B009D2E5E /* GZTopicListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD65E7221D47C42B009D2E5E /* GZTopicListViewController.m */; };
+		FD65E7261D47C664009D2E5E /* GZHotModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FD65E7251D47C664009D2E5E /* GZHotModel.m */; };
 		FD65E7291D47C6C7009D2E5E /* GZMemberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FD65E7281D47C6C7009D2E5E /* GZMemberModel.m */; };
 		FD65E72C1D47C6DB009D2E5E /* GZNodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FD65E72B1D47C6DB009D2E5E /* GZNodeModel.m */; };
 		FD65E72F1D487942009D2E5E /* GZDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD65E72E1D487942009D2E5E /* GZDataManager.m */; };
@@ -65,11 +67,14 @@
 		FD55FA0F1D60514A00794EE0 /* GZLeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZLeftMenuViewController.h; path = Controllers/GZLeftMenuViewController.h; sourceTree = "<group>"; };
 		FD55FA101D60514A00794EE0 /* GZLeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZLeftMenuViewController.m; path = Controllers/GZLeftMenuViewController.m; sourceTree = "<group>"; };
 		FD55FA121D605DA200794EE0 /* GZLeftMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GZLeftMenuViewController.xib; path = Controllers/GZLeftMenuViewController.xib; sourceTree = "<group>"; };
+		FD55FA141D620DC000794EE0 /* GZHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GZHomeViewController.xib; path = Controllers/GZHomeViewController.xib; sourceTree = "<group>"; };
 		FD55FA161D6218F700794EE0 /* circle-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle-left.png"; sourceTree = "<group>"; };
 		FD55FA171D6218F700794EE0 /* nav_menu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_menu_icon.png; sourceTree = "<group>"; };
 		FD56C4B11D560B00004E36B0 /* avatar_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_placeholder.png; sourceTree = "<group>"; };
 		FD65E7211D47C42B009D2E5E /* GZTopicListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZTopicListViewController.h; path = Controllers/GZTopicListViewController.h; sourceTree = "<group>"; };
 		FD65E7221D47C42B009D2E5E /* GZTopicListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZTopicListViewController.m; path = Controllers/GZTopicListViewController.m; sourceTree = "<group>"; };
+		FD65E7241D47C664009D2E5E /* GZHotModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZHotModel.h; path = Models/GZHotModel.h; sourceTree = "<group>"; };
+		FD65E7251D47C664009D2E5E /* GZHotModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZHotModel.m; path = Models/GZHotModel.m; sourceTree = "<group>"; };
 		FD65E7271D47C6C7009D2E5E /* GZMemberModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZMemberModel.h; path = Models/GZMemberModel.h; sourceTree = "<group>"; };
 		FD65E7281D47C6C7009D2E5E /* GZMemberModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GZMemberModel.m; path = Models/GZMemberModel.m; sourceTree = "<group>"; };
 		FD65E72A1D47C6DB009D2E5E /* GZNodeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZNodeModel.h; path = Models/GZNodeModel.h; sourceTree = "<group>"; };
@@ -258,6 +263,8 @@
 		FD90726E1D24333F003CAD5A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FD65E7241D47C664009D2E5E /* GZHotModel.h */,
+				FD65E7251D47C664009D2E5E /* GZHotModel.m */,
 				FD65E7271D47C6C7009D2E5E /* GZMemberModel.h */,
 				FD65E7281D47C6C7009D2E5E /* GZMemberModel.m */,
 				FD65E72A1D47C6DB009D2E5E /* GZNodeModel.h */,
@@ -279,6 +286,7 @@
 				FDBEE55C1D4D309800EC5388 /* GZDetailTopicViewController.m */,
 				FD55FA0C1D604C8400794EE0 /* GZHomeViewController.h */,
 				FD55FA0D1D604C8400794EE0 /* GZHomeViewController.m */,
+				FD55FA141D620DC000794EE0 /* GZHomeViewController.xib */,
 				FD55FA0F1D60514A00794EE0 /* GZLeftMenuViewController.h */,
 				FD55FA101D60514A00794EE0 /* GZLeftMenuViewController.m */,
 				FD55FA121D605DA200794EE0 /* GZLeftMenuViewController.xib */,
@@ -394,6 +402,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD55FA151D620DC000794EE0 /* GZHomeViewController.xib in Resources */,
 				FD55FA131D605DA200794EE0 /* GZLeftMenuViewController.xib in Resources */,
 				FD90724A1D242E42003CAD5A /* LaunchScreen.storyboard in Resources */,
 				FD56C4B21D560B00004E36B0 /* avatar_placeholder.png in Resources */,
@@ -480,6 +489,7 @@
 				FD55FA091D59977900794EE0 /* GZHelper.m in Sources */,
 				FD55FA0E1D604C8400794EE0 /* GZHomeViewController.m in Sources */,
 				FDBEE55D1D4D309800EC5388 /* GZDetailTopicViewController.m in Sources */,
+				FD65E7261D47C664009D2E5E /* GZHotModel.m in Sources */,
 				FDC77D9D1D50C6E200A74719 /* GZReplyCell.m in Sources */,
 				FD65E7231D47C42B009D2E5E /* GZTopicListViewController.m in Sources */,
 				FDBEE5541D4D132C00EC5388 /* GZReplyModel.m in Sources */,

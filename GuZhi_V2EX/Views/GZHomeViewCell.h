@@ -8,15 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class GZTopicModel;
-
 @interface GZHomeViewCell : UITableViewCell
-
-@property (nonatomic, strong) GZTopicModel *model;
-@property (nonatomic, assign) BOOL isTop;
-
-+ (CGFloat)getCellHeightWithTopicModel:(GZTopicModel *)model;
-+ (CGFloat)heightWithTopicModel:(GZTopicModel *)model;
-
 
 @end
