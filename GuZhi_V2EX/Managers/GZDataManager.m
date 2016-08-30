@@ -216,7 +216,9 @@ typedef NS_ENUM(NSInteger, GZRequestMethod) {
                           URLString:@"/api/replies/show.json"
                          parameters:parameters
                             success:^(NSURLSessionDataTask *task, id responseObject) {
-                                NSArray *repliesArray = [MTLJSONAdapter modelsOfClass:[GZReplyModel class] fromJSONArray:responseObject error:nil];
+                                NSLog(@"%@===========================================这是评论详情",responseObject);
+                                NSError *err;
+                                NSArray *repliesArray = [MTLJSONAdapter modelsOfClass:[GZReplyModel class] fromJSONArray:responseObject error:&err];
                                 success(repliesArray);
                             }
                             failure:^(NSError *error) {

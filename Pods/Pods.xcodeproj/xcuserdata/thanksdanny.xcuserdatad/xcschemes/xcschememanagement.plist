@@ -14,11 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>MMDrawerController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Mantle.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,17 +42,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4AD4A540063B064C1F74EEA7D61C7170</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>550F7EEAEEA17E3F92C873912E23B01C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,7 +57,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ADC9EC8D329BD764CED7F5C17CE7B0D3</key>
+		<key>CD8AFBAA8E2A708CF38B9440B123C708</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D6918051FE6D4BB167D159C193DD0D7A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
